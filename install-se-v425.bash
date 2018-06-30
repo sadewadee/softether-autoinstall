@@ -57,5 +57,5 @@ sleep 2
 chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
 echo "SoftEther VPN Server should now start as a system service from now on. Starting SoftEther VPN service..."
-../etc/init.d/vpnserver start
+/etc/init.d/vpnserver start
 esac
