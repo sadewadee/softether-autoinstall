@@ -6,7 +6,7 @@ This is my SoftEther autoinstaller. This will compile and install SoftEther onto
 
 Find the install script for your distro. Currently Ubuntu and CentOS are supported. Please make sure you get the correct "bit" as well. You can't compile a 64-bit application on a 32-bit machine.
 
-Once you've located the correct script, you can just copy/paste it into your favorite text editer or clone it so it can be executed on the server. Don't forget to mark it as executable!
+Once you've located the correct script, you can just copy/paste it into your favorite text editer or clone it so it can be executed on the server. An easy way to get a script on your server w/o cloning the entire repo is to view the raw content, then use wget. For instance `wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash` will write it to a file called "install". Don't forget to mark it as executable with `chmod 777 [script]`.
 
 ### Prerequisites
 
