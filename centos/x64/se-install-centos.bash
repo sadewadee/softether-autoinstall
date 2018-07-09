@@ -15,7 +15,7 @@ sleep 1
 make
 cd ..
 mv vpnserver /usr/local/
-chmod 600 * /usr/local/vpnserver
+chmod 600 /usr/local/vpnserver/*
 chmod 700 /usr/local/vpnserver/vpncmd
 chmod 700 /usr/local/vpnserver/vpnserver
 echo '#!/bin/sh
