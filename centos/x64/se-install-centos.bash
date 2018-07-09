@@ -5,9 +5,9 @@ case $response in
 [yY][eE][sS]|[yY])
 echo "Updating the system first..."
 yum update -y
-yum groupinstall "Development Tools" -y && yum install kernel-devel wget -y
+yum groupinstall "Development Tools" -y && yum install kernel-devel -y
 echo "Downloading release: 4.27"
-wget -O softether-vpn-4.27.tar.gz http://softether-download.com/files/softether/v4.27-9668-beta-2018.05.29-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
+curl -o softether-vpn-4.27.tar.gz http://softether-download.com/files/softether/v4.27-9668-beta-2018.05.29-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
 echo "Please press 1 for all the following questions."
