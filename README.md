@@ -10,7 +10,7 @@ Once you've located the correct script, you can just copy/paste it into your fav
 
 ### Prerequisites
 
-It's always nice to have an up-to-date system, however the autoinstaller will attempt to do this for you. ~~Please make sure you run this script with sudo if you are not root.~~
+It's always nice to have an up-to-date system, however the autoinstaller will attempt to do this for you. ~~Please make sure you run this script with sudo if you are not root.~~ The scripts will automatically require you to authenticate with sudo.
 
 ### We're not done here!
 
