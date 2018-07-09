@@ -1,17 +1,18 @@
 #!/bin/bash
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+(( EUID != 0 )) && exec sudo -- "$0" "$@"
 read -r -p "This will install SoftEther to your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
 echo "Updating the system first..."
-apt-get update
-apt-get upgrade -y
-apt-get install checkinstall build-essential -y
-echo "Downloading last stable release: 4.25"
+apt update && apt upgrade -y && apt install checkinstall build-essential -y
+echo "Downloading last stable release: 4.27"
 sleep 2
-wget -O softether-vpn-4-25.tar.gz http://softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.25-9656-rtm-2018.01.15-linux-x64-64bit.tar.gz
-tar -xzf softether-vpn-4-25.tar.gz
+wget  -O softether-vpn-4.27.tar.gz http://softether-download.com/files/softether/v4.27-9668-beta-2018.05.29-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
+tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
-echo "Please press 1 for all the following questions."
+echo -e "${RED}Please press 1 for all the following questions.${NC}"
 sleep 1
 make
 cd ..
@@ -56,6 +57,6 @@ echo "System daemon created. Registering changes..."
 sleep 2
 chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
-echo "SoftEther VPN Server should now start as a system service from now on. Starting SoftEther VPN service..."
-/etc/init.d/vpnserver start
+echo -e "${RED}SoftEther VPN Server should now start as a system service from now on. To check status type 'systemctl status vpnserver'${NC}"
+systemctl start vpnserver
 esac
