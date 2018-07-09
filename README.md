@@ -5,7 +5,8 @@ This is my SoftEther autoinstaller. This will compile and install SoftEther onto
 ## Ubuntu
 ### 64-bit
 ```bash
-wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 777 install && ./install```
+wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 777 install && ./install
+```
 
 ### 32-bit
 ```bash
