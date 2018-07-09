@@ -2,7 +2,7 @@
 
 This is my SoftEther autoinstaller. This will compile and install SoftEther onto your server. This installer in particular will set up SoftEther as a system service. Currently Ubuntu and CentOS are supported.
 
-## Ubuntu
+## Ubuntu 16.04+
 ### 64-bit
 ```bash
 wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 777 install && ./install
