@@ -59,4 +59,4 @@ If everything was done properly, you're ready to use your new VPN server! To add
 `serverpasswordset` - Sets a password for the VPN server   
 `clustersettingget` - Displays clustering configuration of the VPN server   
 `clustersettingstandalone` - Sets the VPN server type as Standalone   
-`clustersettingcontroller` - Set VPN server type as cluster controller
+`clustersettingcontroller` - Set VPN server type as cluster controller | `/weight` - sets a value for the performance standard ratio of the VPN server for load balancing | `/only` - By specifying "yes" here, the VPN server will operate only as a controller on the cluster.
