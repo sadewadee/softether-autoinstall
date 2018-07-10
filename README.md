@@ -48,14 +48,14 @@ If everything was done properly, you're ready to use your new VPN server! To add
 
 ### Commands List
 #### Entire Server
-`about` - Displays the version information
-`serverinfoget` - Displays server information
-`serverstatusget` - Displays the current server status
-`listenercreate` - Creates a new TCP listener on a specified port
-`listenerdelete` - Deletes a TCP listener on a specified port
-`listenerlist` - Displays the current TCP listeners
-`listenerenable` - Starts a TCP listener
-`listenerdisable` - Stops a TCP listener
-`serverpasswordset` - Sets a password for the VPN server
-`clustersettingget` - Displays clustering configuration of the VPN server
-`clustersettingstandalone` - Sets the VPN server type as Standalone
+`about` - Displays the version information 
+`serverinfoget` - Displays server information 
+`serverstatusget` - Displays the current server status 
+`listenercreate` - Creates a new TCP listener on a specified port 
+`listenerdelete` - Deletes a TCP listener on a specified port 
+`listenerlist` - Displays the current TCP listeners 
+`listenerenable` - Starts a TCP listener 
+`listenerdisable` - Stops a TCP listener 
+`serverpasswordset` - Sets a password for the VPN server 
+`clustersettingget` - Displays clustering configuration of the VPN server 
+`clustersettingstandalone` - Sets the VPN server type as Standalone 
