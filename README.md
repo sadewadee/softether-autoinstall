@@ -47,35 +47,4 @@ This section will provide you with a list of things to get you started with your
 If everything was done properly, you're ready to use your new VPN server! To add new users, just launch the `vpncmd` utility and repeat steps 3 - 5.
 
 ### Commands List
-#### Entire Server
-`about` - Displays the version information   
-`serverinfoget` - Displays server information   
-`serverstatusget` - Displays the current server status   
-`listenercreate` - Creates a new TCP listener on a specified port   
-`listenerdelete` - Deletes a TCP listener on a specified port   
-`listenerlist` - Displays the current TCP listeners   
-`listenerenable` - Starts a TCP listener   
-`listenerdisable` - Stops a TCP listener   
-`serverpasswordset` - Sets a password for the VPN server   
-`clustersettingget` - Displays clustering configuration of the VPN server   
-`clustersettingstandalone` - Sets the VPN server type as Standalone   
-`clustersettingcontroller` - Set VPN server type as cluster controller | `/weight` - sets a value for the performance standard ratio of the VPN server for load balancing | `/only` - By specifying "yes" here, the VPN server will operate only as a controller on the cluster.   
-`clustersettingmember` - Sets the VPN server type as cluster member | `server:port` - specifies the host name or IP address and the port number of the destination cluster controller | `/ip` - specifies the public IP address of this server | `/ports` - specifies the list of public port numbers on the server | `password` - specifies the password required to connect to the destination controller | `/weight` - sets a value for the performance standard ratio of the VPN server for load balancing   
-`clustermemberlist` - Displays the list of cluster members   
-`clustermemberinfoget` - Displays information about a cluster member   
-`clustermembercertget` - Displays the public certificate from a cluster member   
-`clusterconnectionstatusget` - Displays connection status to a cluster controller   
-`servercertget` - Displays the SSL certificate/private keys of the VPN server   
-`servercertset` - Sets the SSL Certificate and Private Key of the VPN server   
-`servercipherget` - Displays the encrypted algorithm user for VPN communications   
-`servercipherset` - Set the Encrypted Algorithm Used for VPN Communication | `name` - This specifies the encrypted and electronic signature algorithm to set. You can obtain the list of usable algorithms by using the ServerCipherGet command   
-`debug` - Execute a Debug Command | `id` - Specify a debug command number | `/arg` - Specify a string to pass to the debug command. If a string contains spaces, contains the whole command by " "   
-`crash` - Raise a error on the VPN Server / Bridge to terminate the process forcefully | `yes` - Input "yes" for confirmation   
-`flush` - Save All Volatile Data of VPN Server / Bridge to the Configuration File   
-`keepenable` - Enable the Keep Alive Internet Connection Function   
-`keepdisable` - Disable the Keep Alive Internet Connection Function   
-`keepset` - Set the Keep Alive Internet Connection Function | `/HOST` - Specify the host name or IP address, and port number of the destination using the format "host name:port number" | `/PROTOCOL` - Specify either tcp or udp | `/INTERVAL` - Specify, in seconds, the interval between the sending of packets   
-`keepget` - Get the Keep Alive Internet Connection Function   
-`syslogenable` - Set syslog Send Function | `1|2|3` - Specify, using an integer, 1, 2 or 3 for the setting to use the syslog send function. 1: Send server log by syslog. 2: Send server and Virtual Hub security logs by syslog. 3: Send server, Virtual Hub security, and packet logs by syslog. | `/HOST` - Specify the host name or IP address, and port number of the syslog server using the format [host name:port number]. If the port number is omitted, 514 will be used.   
-`syslogdisable` - Disable syslog Send Function   
-`syslogget` - Get syslog Send Function   
+I'll onlt be listing popular commands here since there are just *way too many* to try and put here. 
