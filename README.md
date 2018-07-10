@@ -45,3 +45,17 @@ This section will provide you with a list of things to get you started with your
    Optional: You can enable L2TP/IPsec with `ipsecenable`. It is recommended that if you use this option, you only enable L2TP/IPsec. Do not enable RAW L2TP w/o encrpytion. You will be asked to set a pre-shared key for the IPsec server, you can use anything. I've used `vpn` as a pre-shared key for ages. Remember that this is NOT a password for the server or a user, so it's safe to use that. You'll also be asked for the default hub in the event that a user does not specify the hub to connect to in their username, you'll set this to `default` if you haven't changed any hub names. If you're more advanced user and have multiple hubs, you can specify what hub a user connects to by putting it in their username on the client. For instance `icoexist@public` or `icoexist@hub2`.
    
 If everything was done properly, you're ready to use your new VPN server! To add new users, just launch the `vpncmd` utility and repeat steps 3 - 5.
+
+### Commands List
+#### Entire Server
+`about` - Displays the version information
+`serverinfoget` - Displays server information
+`serverstatusget` - Displays the current server status
+`listenercreate` - Creates a new TCP listener on a specified port
+`listenerdelete` - Deletes a TCP listener on a specified port
+`listenerlist` - Displays the current TCP listeners
+`listenerenable` - Starts a TCP listener
+`listenerdisable` - Stops a TCP listener
+`serverpasswordset` - Sets a password for the VPN server
+`clustersettingget` - Displays clustering configuration of the VPN server
+`clustersettingstandalone` - Sets the VPN server type as Standalone
