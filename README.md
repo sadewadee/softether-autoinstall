@@ -116,140 +116,140 @@ If everything was done properly, you're ready to use your new VPN server! To add
  `ConnectionList`             - Get List of TCP Connections Connecting to the VPN Server   
  `Crash`                      - Raise a error on the VPN Server / Bridge to terminate the process forcefully.   
  `CrlAdd`                     - Add a Revoked Certificate   
- CrlDel                     - Delete a Revoked Certificate   
- CrlGet                     - Get a Revoked Certificate   
- CrlList                    - Get List of Certificates Revocation List   
- Debug                      - Execute a Debug Command   
- DhcpDisable                - Disable Virtual DHCP Server Function of SecureNAT Function   
- DhcpEnable                 - Enable Virtual DHCP Server Function of SecureNAT Function   
- DhcpGet                    - Get Virtual DHCP Server Function Setting of SecureNAT Function   
- DhcpSet                    - Change Virtual DHCP Server Function Setting of SecureNAT Function   
- DhcpTable                  - Get Virtual DHCP Server Function Lease Table of SecureNAT Function   
- DynamicDnsGetStatus        - Show the Current Status of Dynamic DNS Function   
- DynamicDnsSetHostname      - Set the Dynamic DNS Hostname   
- EtherIpClientAdd           - Add New EtherIP / L2TPv3 over IPsec Client Setting to Accept EthreIP / L2TPv3 Client Devices   
- EtherIpClientDelete        - Delete an EtherIP / L2TPv3 over IPsec Client Setting   
- EtherIpClientList          - Get the Current List of EtherIP / L2TPv3 Client Device Entry Definitions   
- ExtOptionList              - Get List of Virtual Hub Extended Options   
- ExtOptionSet               - Set a Value of Virtual Hub Extended Options   
- Flush                      - Save All Volatile Data of VPN Server / Bridge to the Configuration File   
- GroupCreate                - Create Group   
- GroupDelete                - Delete Group   
- GroupGet                   - Get Group Information and List of Assigned Users   
- GroupJoin                  - Add User to Group   
- GroupList                  - Get List of Groups   
- GroupPolicyRemove          - Delete Group Security Policy   
- GroupPolicySet             - Set Group Security Policy   
- GroupSet                   - Set Group Information   
- GroupUnjoin                - Delete User from Group   
- Hub                        - Select Virtual Hub to Manage   
- HubCreate                  - Create New Virtual Hub   
- HubCreateDynamic           - Create New Dynamic Virtual Hub (For Clustering)   
- HubCreateStatic            - Create New Static Virtual Hub (For Clustering)   
- HubDelete                  - Delete Virtual Hub   
- HubList                    - Get List of Virtual Hubs   
- HubSetDynamic              - Change Virtual Hub Type to Dynamic Virtual Hub   
- HubSetStatic               - Change Virtual Hub Type to Static Virtual Hub   
- IPsecEnable                - Enable or Disable IPsec VPN Server Function   
- IPsecGet                   - Get the Current IPsec VPN Server Settings   
- IpDelete                   - Delete IP Address Table Entry   
- IpTable                    - Get the IP Address Table Database   
- KeepDisable                - Disable the Keep Alive Internet Connection Function   
- KeepEnable                 - Enable the Keep Alive Internet Connection Function   
- KeepGet                    - Get the Keep Alive Internet Connection Function   
- KeepSet                    - Set the Keep Alive Internet Connection Function   
- LicenseAdd                 - Add License Key Registration   
- LicenseDel                 - Delete Registered License   
- LicenseList                - Get List of Registered Licenses   
- LicenseStatus              - Get License Status of Current VPN Server   
- ListenerCreate             - Create New TCP Listener   
- ListenerDelete             - Delete TCP Listener   
- ListenerDisable            - Stop TCP Listener Operation   
- ListenerEnable             - Begin TCP Listener Operation   
- ListenerList               - Get List of TCP Listeners   
- LogDisable                 - Disable Security Log or Packet Log   
- LogEnable                  - Enable Security Log or Packet Log   
- LogFileGet                 - Download Log file   
- LogFileList                - Get List of Log Files   
- LogGet                     - Get Log Save Setting of Virtual Hub   
- LogPacketSaveType          - Set Save Contents and Type of Packet to Save to Packet Log   
- LogSwitchSet               - Set Log File Switch Cycle   
- MacDelete                  - Delete MAC Address Table Entry   
- MacTable                   - Get the MAC Address Table Database   
- MakeCert                   - Create New X.509 Certificate and Private Key (1024 bit)   
- MakeCert2048               - Create New X.509 Certificate and Private Key (2048 bit)   
- NatDisable                 - Disable Virtual NAT Function of SecureNAT Function   
- NatEnable                  - Enable Virtual NAT Function of SecureNAT Function   
- NatGet                     - Get Virtual NAT Function Setting of SecureNAT Function   
- NatSet                     - Change Virtual NAT Function Setting of SecureNAT Function   
- NatTable                   - Get Virtual NAT Function Session Table of SecureNAT Function   
- Offline                    - Switch Virtual Hub to Offline   
- Online                     - Switch Virtual Hub to Online   
- OpenVpnEnable              - Enable / Disable OpenVPN Clone Server Function   
- OpenVpnGet                 - Get the Current Settings of OpenVPN Clone Server Function   
- OpenVpnMakeConfig          - Generate a Sample Setting File for OpenVPN Client   
- OptionsGet                 - Get Options Setting of Virtual Hubs   
- PolicyList                 - Display List of Security Policy Types and Settable Values   
- RadiusServerDelete         - Delete Setting to Use RADIUS Server for User Authentication   
- RadiusServerGet            - Get Setting of RADIUS Server Used for User Authentication   
- RadiusServerSet            - Set RADIUS Server to use for User Authentication   
- Reboot                     - Reboot VPN Server Service   
- RouterAdd                  - Define New Virtual Layer 3 Switch   
- RouterDelete               - Delete Virtual Layer 3 Switch   
- RouterIfAdd                - Add Virtual Interface to Virtual Layer 3 Switch   
- RouterIfDel                - Delete Virtual Interface of Virtual Layer 3 Switch   
- RouterIfList               - Get List of Interfaces Registered on the Virtual Layer 3 Switch   
- RouterList                 - Get List of Virtual Layer 3 Switches   
- RouterStart                - Start Virtual Layer 3 Switch Operation   
- RouterStop                 - Stop Virtual Layer 3 Switch Operation   
- RouterTableAdd             - Add Routing Table Entry for Virtual Layer 3 Switch   
- RouterTableDel             - Delete Routing Table Entry of Virtual Layer 3 Switch   
- RouterTableList            - Get List of Routing Tables of Virtual Layer 3 Switch    
- SecureNatDisable           - Disable the Virtual NAT and DHCP Server Function (SecureNat Function)   
- SecureNatEnable            - Enable the Virtual NAT and DHCP Server Function (SecureNat Function)   
- SecureNatHostGet           - Get Network Interface Setting of Virtual Host of SecureNAT Function   
- SecureNatHostSet           - Change Network Interface Setting of Virtual Host of SecureNAT Function   
- SecureNatStatusGet         - Get the Operating Status of the Virtual NAT and DHCP Server Function (SecureNat Function)   
- ServerCertGet              - Get SSL Certificate of VPN Server   
- ServerCertRegenerate       - Generate New Self-Signed Certificate with Specified CN (Common Name) and Register on VPN Server   
- ServerCertSet              - Set SSL Certificate and Private Key of VPN Server   
- ServerCipherGet            - Get the Encrypted Algorithm Used for VPN Communication.   
- ServerCipherSet            - Set the Encrypted Algorithm Used for VPN Communication.   
- ServerInfoGet              - Get server information   
- ServerKeyGet               - Get SSL Certificate Private Key of VPN Server   
- ServerPasswordSet          - Set VPN Server Administrator Password   
- ServerStatusGet            - Get Current Server Status   
- SessionDisconnect          - Disconnect Session   
- SessionGet                 - Get Session Information   
- SessionList                - Get List of Connected Sessions   
- SetEnumAllow               - Allow Enumeration by Virtual Hub Anonymous Users   
- SetEnumDeny                - Deny Enumeration by Virtual Hub Anonymous Users   
- SetHubPassword             - Set Virtual Hub Administrator Password   
- SetMaxSession              - Set the Max Number of Concurrently Connected Sessions for Virtual Hub   
- SstpEnable                 - Enable / Disable Microsoft SSTP VPN Clone Server Function   
- SstpGet                    - Get the Current Settings of Microsoft SSTP VPN Clone Server Function   
- StatusGet                  - Get Current Status of Virtual Hub   
- SyslogDisable              - Disable syslog Send Function   
- SyslogEnable               - Set syslog Send Function   
- SyslogGet                  - Get syslog Send Function   
- TrafficClient              - Run Network Traffic Speed Test Tool in Client Mode   
- TrafficServer              - Run Network Traffic Speed Test Tool in Server Mode   
- UserAnonymousSet           - Set Anonymous Authentication for User Auth Type   
- UserCertGet                - Get Certificate Registered for Individual Certificate Authentication User   
- UserCertSet                - Set Individual Certificate Authentication for User Auth Type and Set Certificate   
- UserCreate                 - Create User    
- UserDelete                 - Delete User   
- UserExpiresSet             - Set User's Expiration Date   
- UserGet                    - Get User Information   
- UserList                   - Get List of Users   
- UserNTLMSet                - Set NT Domain Authentication for User Auth Type   
- UserPasswordSet            - Set Password Authentication for User Auth Type and Set Password   
- UserPolicyRemove           - Delete User Security Policy   
- UserPolicySet              - Set User Security Policy   
- UserRadiusSet              - Set RADIUS Authentication for User Auth Type   
- UserSet                    - Change User Information   
- UserSignedSet              - Set Signed Certificate Authentication for User Auth Type   
- VpnAzureGetStatus          - Show the current status of VPN Azure function   
- VpnAzureSetEnable          - Enable / Disable VPN Azure Function   
- VpnOverIcmpDnsEnable       - Enable / Disable the VPN over ICMP / VPN over DNS Server Function   
- VpnOverIcmpDnsGet          - Get Current Setting of the VPN over ICMP / VPN over DNS Function   
+ `CrlDel`                     - Delete a Revoked Certificate   
+ `CrlGet`                     - Get a Revoked Certificate   
+ `CrlList`                    - Get List of Certificates Revocation List   
+ `Debug`                      - Execute a Debug Command   
+ `DhcpDisable`                - Disable Virtual DHCP Server Function of SecureNAT Function   
+ `DhcpEnable`                 - Enable Virtual DHCP Server Function of SecureNAT Function   
+ `DhcpGet`                    - Get Virtual DHCP Server Function Setting of SecureNAT Function   
+ `DhcpSet`                    - Change Virtual DHCP Server Function Setting of SecureNAT Function   
+ `DhcpTable`                  - Get Virtual DHCP Server Function Lease Table of SecureNAT Function   
+ `DynamicDnsGetStatus`        - Show the Current Status of Dynamic DNS Function   
+ `DynamicDnsSetHostname`      - Set the Dynamic DNS Hostname   
+ `EtherIpClientAdd`           - Add New EtherIP / L2TPv3 over IPsec Client Setting to Accept EthreIP / L2TPv3 Client Devices   
+ `EtherIpClientDelete`        - Delete an EtherIP / L2TPv3 over IPsec Client Setting   
+ `EtherIpClientList`          - Get the Current List of EtherIP / L2TPv3 Client Device Entry Definitions   
+ `ExtOptionList`              - Get List of Virtual Hub Extended Options   
+ `ExtOptionSet`               - Set a Value of Virtual Hub Extended Options   
+ `Flush`                      - Save All Volatile Data of VPN Server / Bridge to the Configuration File   
+ `GroupCreate`                - Create Group   
+ `GroupDelete`                - Delete Group   
+ `GroupGet`                   - Get Group Information and List of Assigned Users   
+ `GroupJoin`                  - Add User to Group   
+ `GroupList`                  - Get List of Groups   
+ `GroupPolicyRemove`          - Delete Group Security Policy   
+ `GroupPolicySet`             - Set Group Security Policy   
+ `GroupSet`                   - Set Group Information   
+ `GroupUnjoin`                - Delete User from Group   
+ `Hub`                        - Select Virtual Hub to Manage   
+ `HubCreate`                  - Create New Virtual Hub   
+ `HubCreateDynamic`           - Create New Dynamic Virtual Hub (For Clustering)   
+ `HubCreateStatic`            - Create New Static Virtual Hub (For Clustering)   
+ `HubDelete`                  - Delete Virtual Hub   
+ `HubList`                    - Get List of Virtual Hubs   
+ `HubSetDynamic`              - Change Virtual Hub Type to Dynamic Virtual Hub   
+ `HubSetStatic`               - Change Virtual Hub Type to Static Virtual Hub   
+ `IPsecEnable`                - Enable or Disable IPsec VPN Server Function   
+ `IPsecGet`                   - Get the Current IPsec VPN Server Settings   
+ `IpDelete`                   - Delete IP Address Table Entry   
+ `IpTable`                    - Get the IP Address Table Database   
+ `KeepDisable`                - Disable the Keep Alive Internet Connection Function   
+ `KeepEnable`                 - Enable the Keep Alive Internet Connection Function   
+ `KeepGet`                    - Get the Keep Alive Internet Connection Function   
+ `KeepSet`                    - Set the Keep Alive Internet Connection Function   
+ `LicenseAdd`                 - Add License Key Registration   
+ `LicenseDel`                 - Delete Registered License   
+ `LicenseList`                - Get List of Registered Licenses   
+ `LicenseStatus`              - Get License Status of Current VPN Server   
+ `ListenerCreate`             - Create New TCP Listener   
+ `ListenerDelete`             - Delete TCP Listener   
+ `ListenerDisable`            - Stop TCP Listener Operation   
+ `ListenerEnable`             - Begin TCP Listener Operation   
+ `ListenerList`               - Get List of TCP Listeners   
+ `LogDisable`                 - Disable Security Log or Packet Log   
+ `LogEnable`                  - Enable Security Log or Packet Log   
+ `LogFileGet`                 - Download Log file   
+ `LogFileList`                - Get List of Log Files   
+ `LogGet`                     - Get Log Save Setting of Virtual Hub   
+ `LogPacketSaveType`          - Set Save Contents and Type of Packet to Save to Packet Log   
+ `LogSwitchSet`               - Set Log File Switch Cycle   
+ `MacDelete`                  - Delete MAC Address Table Entry   
+ `MacTable`                   - Get the MAC Address Table Database   
+ `MakeCert`                   - Create New X.509 Certificate and Private Key (1024 bit)   
+ `MakeCert2048`               - Create New X.509 Certificate and Private Key (2048 bit)   
+ `NatDisable`                 - Disable Virtual NAT Function of SecureNAT Function   
+ `NatEnable`                  - Enable Virtual NAT Function of SecureNAT Function   
+ `NatGet`                     - Get Virtual NAT Function Setting of SecureNAT Function   
+ `NatSet`                     - Change Virtual NAT Function Setting of SecureNAT Function   
+ `NatTable`                   - Get Virtual NAT Function Session Table of SecureNAT Function   
+ `Offline`                    - Switch Virtual Hub to Offline   
+ `Online`                     - Switch Virtual Hub to Online   
+ `OpenVpnEnable`              - Enable / Disable OpenVPN Clone Server Function   
+ `OpenVpnGet`                 - Get the Current Settings of OpenVPN Clone Server Function   
+ `OpenVpnMakeConfig`          - Generate a Sample Setting File for OpenVPN Client   
+ `OptionsGet`                 - Get Options Setting of Virtual Hubs   
+ `PolicyList`                 - Display List of Security Policy Types and Settable Values   
+ `RadiusServerDelete`         - Delete Setting to Use RADIUS Server for User Authentication   
+ `RadiusServerGet`            - Get Setting of RADIUS Server Used for User Authentication   
+ `RadiusServerSet`            - Set RADIUS Server to use for User Authentication   
+ `Reboot`                     - Reboot VPN Server Service   
+ `RouterAdd`                  - Define New Virtual Layer 3 Switch   
+ `RouterDelete`               - Delete Virtual Layer 3 Switch   
+ `RouterIfAdd`                - Add Virtual Interface to Virtual Layer 3 Switch   
+ `RouterIfDel`                - Delete Virtual Interface of Virtual Layer 3 Switch   
+ `RouterIfList`               - Get List of Interfaces Registered on the Virtual Layer 3 Switch   
+ `RouterList`                 - Get List of Virtual Layer 3 Switches   
+ `RouterStart`                - Start Virtual Layer 3 Switch Operation   
+ `RouterStop`                 - Stop Virtual Layer 3 Switch Operation   
+ `RouterTableAdd`             - Add Routing Table Entry for Virtual Layer 3 Switch   
+ `RouterTableDel`             - Delete Routing Table Entry of Virtual Layer 3 Switch   
+ `RouterTableList`            - Get List of Routing Tables of Virtual Layer 3 Switch    
+ `SecureNatDisable`           - Disable the Virtual NAT and DHCP Server Function (SecureNat Function)   
+ `SecureNatEnable`            - Enable the Virtual NAT and DHCP Server Function (SecureNat Function)   
+ `SecureNatHostGet`           - Get Network Interface Setting of Virtual Host of SecureNAT Function   
+ `SecureNatHostSet`           - Change Network Interface Setting of Virtual Host of SecureNAT Function   
+ `SecureNatStatusGet`         - Get the Operating Status of the Virtual NAT and DHCP Server Function (SecureNat Function)   
+ `ServerCertGet`              - Get SSL Certificate of VPN Server   
+ `ServerCertRegenerate`       - Generate New Self-Signed Certificate with Specified CN (Common Name) and Register on VPN Server   
+ `ServerCertSet`              - Set SSL Certificate and Private Key of VPN Server   
+ `ServerCipherGet`            - Get the Encrypted Algorithm Used for VPN Communication.   
+ `ServerCipherSet`            - Set the Encrypted Algorithm Used for VPN Communication.   
+ `ServerInfoGet`              - Get server information   
+ `ServerKeyGet`               - Get SSL Certificate Private Key of VPN Server   
+ `ServerPasswordSet`          - Set VPN Server Administrator Password   
+ `ServerStatusGet`            - Get Current Server Status   
+ `SessionDisconnect`          - Disconnect Session   
+ `SessionGet`                 - Get Session Information   
+ `SessionList`                - Get List of Connected Sessions   
+ `SetEnumAllow`               - Allow Enumeration by Virtual Hub Anonymous Users   
+ `SetEnumDeny`                - Deny Enumeration by Virtual Hub Anonymous Users   
+ `SetHubPassword`             - Set Virtual Hub Administrator Password   
+ `SetMaxSession`              - Set the Max Number of Concurrently Connected Sessions for Virtual Hub   
+ `SstpEnable`                 - Enable / Disable Microsoft SSTP VPN Clone Server Function   
+ `SstpGet`                    - Get the Current Settings of Microsoft SSTP VPN Clone Server Function   
+ `StatusGet`                  - Get Current Status of Virtual Hub   
+ `SyslogDisable`              - Disable syslog Send Function   
+ `SyslogEnable`               - Set syslog Send Function   
+ `SyslogGet`                  - Get syslog Send Function   
+ `TrafficClient`              - Run Network Traffic Speed Test Tool in Client Mode   
+ `TrafficServer`              - Run Network Traffic Speed Test Tool in Server Mode   
+ `UserAnonymousSet`           - Set Anonymous Authentication for User Auth Type   
+ `UserCertGet`                - Get Certificate Registered for Individual Certificate Authentication User   
+ `UserCertSet`                - Set Individual Certificate Authentication for User Auth Type and Set Certificate   
+ `UserCreate`                 - Create User    
+ `UserDelete`                 - Delete User   
+ `UserExpiresSet`             - Set User's Expiration Date   
+ `UserGet`                    - Get User Information   
+ `UserList`                   - Get List of Users   
+ `UserNTLMSet`                - Set NT Domain Authentication for User Auth Type   
+ `UserPasswordSet`            - Set Password Authentication for User Auth Type and Set Password   
+ `UserPolicyRemove`           - Delete User Security Policy   
+ `UserPolicySet`              - Set User Security Policy   
+ `UserRadiusSet`              - Set RADIUS Authentication for User Auth Type   
+ `UserSet`                    - Change User Information   
+ `UserSignedSet`              - Set Signed Certificate Authentication for User Auth Type   
+ `VpnAzureGetStatus`          - Show the current status of VPN Azure function   
+ `VpnAzureSetEnable`          - Enable / Disable VPN Azure Function   
+ `VpnOverIcmpDnsEnable`       - Enable / Disable the VPN over ICMP / VPN over DNS Server Function   
+ `VpnOverIcmpDnsGet`          - Get Current Setting of the VPN over ICMP / VPN over DNS Function   
