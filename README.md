@@ -46,8 +46,7 @@ This section will provide you with a list of things to get you started with your
    
 If everything was done properly, you're ready to use your new VPN server! To add new users, just launch the `vpncmd` utility and repeat steps 3 - 5.
 
-### Commands List
-I'll only be listing popular commands here since there are just *way too many* to try and put here.   
+### Commands List 
 
  About                      - Display the version information   
  AcAdd                      - Add Rule to Source IP Address Limit List (IPv4)   
