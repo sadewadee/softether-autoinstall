@@ -48,74 +48,74 @@ If everything was done properly, you're ready to use your new VPN server! To add
 
 ### Commands List 
 
- About                      - Display the version information   
- AcAdd                      - Add Rule to Source IP Address Limit List (IPv4)   
- AcAdd6                     - Add Rule to Source IP Address Limit List (IPv6)   
- AcDel                      - Delete Rule from Source IP Address Limit List   
- AcList                     - Get List of Rule Items of Source IP Address Limit List   
- AccessAdd                  - Add Access List Rules (IPv4)   
- AccessAdd6                 - Add Access List Rules (IPv6)   
- AccessAddEx                - Add Extended Access List Rules (IPv4: Delay, Jitter and Packet Loss Generating)   
- AccessAddEx6               - Add Extended Access List Rules (IPv6: Delay, Jitter and Packet Loss Generating)   
- AccessDelete               - Delete Rule from Access List   
- AccessDisable              - Disable Access List Rule   
- AccessEnable               - Enable Access List Rule   
- AccessList                 - Get Access List Rule List    
- AdminOptionList            - Get List of Virtual Hub Administration Options   
- AdminOptionSet             - Set Values of Virtual Hub Administration Options   
- BridgeCreate               - Create Local Bridge Connection   
- BridgeDelete               - Delete Local Bridge Connection   
- BridgeDeviceList           - Get List of Network Adapters Usable as Local Bridge   
- BridgeList                 - Get List of Local Bridge Connection   
- CAAdd                      - Add Trusted CA Certificate   
- CADelete                   - Delete Trusted CA Certificate   
- CAGet                      - Get Trusted CA Certificate   
- CAList                     - Get List of Trusted CA Certificates   
- Caps                       - Get List of Server Functions/Capability   
- CascadeAnonymousSet        - Set User Authentication Type of Cascade Connection to Anonymous Authentication   
- CascadeCertGet             - Get Client Certificate to Use for Cascade Connection   
- CascadeCertSet             - Set User Authentication Type of Cascade Connection to Client Certificate Authentication   
- CascadeCompressDisable     - Disable Data Compression when Communicating by Cascade Connection   
- CascadeCompressEnable      - Enable Data Compression when Communicating by Cascade Connection   
- CascadeCreate              - Create New Cascade Connection   
- CascadeDelete              - Delete Cascade Connection Setting   
- CascadeDetailSet           - Set Advanced Settings for Cascade Connection   
- CascadeEncryptDisable      - Disable Encryption when Communicating by Cascade Connection   
- CascadeEncryptEnable       - Enable Encryption when Communicating by Cascade Connection   
- CascadeGet                 - Get the Cascade Connection Setting   
- CascadeList                - Get List of Cascade Connections   
- CascadeOffline             - Switch Cascade Connection to Offline Status   
- CascadeOnline              - Switch Cascade Connection to Online Status   
- CascadePasswordSet         - Set User Authentication Type of Cascade Connection to Password Authentication   
- CascadePolicySet           - Set Cascade Connection Session Security Policy   
- CascadeProxyHttp           - Set Connection Method of Cascade Connection to be via an HTTP Proxy Server   
- CascadeProxyNone           - Specify Direct TCP/IP Connection as the Connection Method of Cascade Connection   
- CascadeProxySocks          - Set Connection Method of Cascade Connection to be via an SOCKS Proxy Server   
- CascadeRename              - Change Name of Cascade Connection   
- CascadeServerCertDelete    - Delete the Server Individual Certificate for Cascade Connection   
- CascadeServerCertDisable   - Disable Cascade Connection Server Certificate Verification Option   
- CascadeServerCertEnable    - Enable Cascade Connection Server Certificate Verification Option   
- CascadeServerCertGet       - Get the Server Individual Certificate for Cascade Connection   
- CascadeServerCertSet       - Set the Server Individual Certificate for Cascade Connection   
- CascadeSet                 - Set the Destination for Cascade Connection   
- CascadeStatusGet           - Get Current Cascade Connection Status   
- CascadeUsernameSet         - Set User Name to Use Connection of Cascade Connection   
- Check                      - Check whether SoftEther VPN Operation is Possible   
- ClusterConnectionStatusGet - Get Connection Status to Cluster Controller   
- ClusterMemberCertGet       - Get Cluster Member Certificate   
- ClusterMemberInfoGet       - Get Cluster Member Information   
- ClusterMemberList          - Get List of Cluster Members   
- ClusterSettingController   - Set VPN Server Type as Cluster Controller   
- ClusterSettingGet          - Get Clustering Configuration of Current VPN Server   
- ClusterSettingMember       - Set VPN Server Type as Cluster Member   
- ClusterSettingStandalone   - Set VPN Server Type as Standalone   
- ConfigGet                  - Get the current configuration of the VPN Server   
- ConfigSet                  - Write Configuration File to VPN Server   
- ConnectionDisconnect       - Disconnect TCP Connections Connecting to the VPN Server   
- ConnectionGet              - Get Information of TCP Connections Connecting to the VPN Server   
- ConnectionList             - Get List of TCP Connections Connecting to the VPN Server   
- Crash                      - Raise a error on the VPN Server / Bridge to terminate the process forcefully.   
- CrlAdd                     - Add a Revoked Certificate   
+ `About`                      - Display the version information   
+ `AcAdd`                      - Add Rule to Source IP Address Limit List (IPv4)   
+ `AcAdd6`                     - Add Rule to Source IP Address Limit List (IPv6)   
+ `AcDel`                      - Delete Rule from Source IP Address Limit List   
+ `AcList`                     - Get List of Rule Items of Source IP Address Limit List   
+ `AccessAdd`                  - Add Access List Rules (IPv4)   
+ `AccessAdd6`                 - Add Access List Rules (IPv6)   
+ `AccessAddEx`                - Add Extended Access List Rules (IPv4: Delay, Jitter and Packet Loss Generating)   
+ `AccessAddEx6`               - Add Extended Access List Rules (IPv6: Delay, Jitter and Packet Loss Generating)   
+ `AccessDelete`               - Delete Rule from Access List   
+ `AccessDisable`              - Disable Access List Rule   
+ `AccessEnable`               - Enable Access List Rule   
+ `AccessList`                 - Get Access List Rule List    
+ `AdminOptionList`            - Get List of Virtual Hub Administration Options   
+ `AdminOptionSet`             - Set Values of Virtual Hub Administration Options   
+ `BridgeCreate`               - Create Local Bridge Connection   
+ `BridgeDelete`               - Delete Local Bridge Connection   
+ `BridgeDeviceList`           - Get List of Network Adapters Usable as Local Bridge   
+ `BridgeList`                 - Get List of Local Bridge Connection   
+ `CAAdd`                      - Add Trusted CA Certificate   
+ `CADelete`                   - Delete Trusted CA Certificate   
+ `CAGet`                      - Get Trusted CA Certificate   
+ `CAList`                     - Get List of Trusted CA Certificates   
+ `Caps`                       - Get List of Server Functions/Capability   
+ `CascadeAnonymousSet`        - Set User Authentication Type of Cascade Connection to Anonymous Authentication   
+ `CascadeCertGet`             - Get Client Certificate to Use for Cascade Connection   
+ `CascadeCertSet`             - Set User Authentication Type of Cascade Connection to Client Certificate Authentication   
+ `CascadeCompressDisable`     - Disable Data Compression when Communicating by Cascade Connection   
+ `CascadeCompressEnable`      - Enable Data Compression when Communicating by Cascade Connection   
+ `CascadeCreate`              - Create New Cascade Connection   
+ `CascadeDelete`              - Delete Cascade Connection Setting   
+ `CascadeDetailSet`           - Set Advanced Settings for Cascade Connection   
+ `CascadeEncryptDisable`      - Disable Encryption when Communicating by Cascade Connection   
+ `CascadeEncryptEnable`       - Enable Encryption when Communicating by Cascade Connection   
+ `CascadeGet`                 - Get the Cascade Connection Setting   
+ `CascadeList`                - Get List of Cascade Connections   
+ `CascadeOffline`             - Switch Cascade Connection to Offline Status   
+ `CascadeOnline`              - Switch Cascade Connection to Online Status   
+ `CascadePasswordSet`         - Set User Authentication Type of Cascade Connection to Password Authentication   
+ `CascadePolicySet`           - Set Cascade Connection Session Security Policy   
+ `CascadeProxyHttp`           - Set Connection Method of Cascade Connection to be via an HTTP Proxy Server   
+ `CascadeProxyNone`           - Specify Direct TCP/IP Connection as the Connection Method of Cascade Connection   
+ `CascadeProxySocks`          - Set Connection Method of Cascade Connection to be via an SOCKS Proxy Server   
+ `CascadeRename`              - Change Name of Cascade Connection   
+ `CascadeServerCertDelete`    - Delete the Server Individual Certificate for Cascade Connection   
+ `CascadeServerCertDisable`   - Disable Cascade Connection Server Certificate Verification Option   
+ `CascadeServerCertEnable`    - Enable Cascade Connection Server Certificate Verification Option   
+ `CascadeServerCertGet`       - Get the Server Individual Certificate for Cascade Connection   
+ `CascadeServerCertSet`       - Set the Server Individual Certificate for Cascade Connection   
+ `CascadeSet`                 - Set the Destination for Cascade Connection   
+ `CascadeStatusGet`           - Get Current Cascade Connection Status   
+ `CascadeUsernameSet`         - Set User Name to Use Connection of Cascade Connection   
+ `Check`                      - Check whether SoftEther VPN Operation is Possible   
+ `ClusterConnectionStatusGet` - Get Connection Status to Cluster Controller   
+ `ClusterMemberCertGet`       - Get Cluster Member Certificate   
+ `ClusterMemberInfoGet`       - Get Cluster Member Information   
+ `ClusterMemberList`          - Get List of Cluster Members   
+ `ClusterSettingController`   - Set VPN Server Type as Cluster Controller   
+ `ClusterSettingGet`          - Get Clustering Configuration of Current VPN Server   
+ `ClusterSettingMember`       - Set VPN Server Type as Cluster Member   
+ `ClusterSettingStandalone`   - Set VPN Server Type as Standalone   
+ `ConfigGet`                  - Get the current configuration of the VPN Server   
+ `ConfigSet`                  - Write Configuration File to VPN Server   
+ `ConnectionDisconnect`       - Disconnect TCP Connections Connecting to the VPN Server   
+ `ConnectionGet`              - Get Information of TCP Connections Connecting to the VPN Server   
+ `ConnectionList`             - Get List of TCP Connections Connecting to the VPN Server   
+ `Crash`                      - Raise a error on the VPN Server / Bridge to terminate the process forcefully.   
+ `CrlAdd`                     - Add a Revoked Certificate   
  CrlDel                     - Delete a Revoked Certificate   
  CrlGet                     - Get a Revoked Certificate   
  CrlList                    - Get List of Certificates Revocation List   
