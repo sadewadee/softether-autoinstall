@@ -14,12 +14,6 @@ wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall
 ```
 Please bear in mind that running 32-bit versions of Ubuntu server is not recommended, and Ubuntu 18.04 is **not** available in a 32-bit version.
 
-## Ubuntu 14.04
-### 64-bit
-```bash
-wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu-14.04/x64/se-install-ubuntu.bash && chmod 770 install && ./install
-```
-
 ## CentOS
 ### 64-bit
 ```bash
