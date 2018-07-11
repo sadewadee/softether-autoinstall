@@ -282,4 +282,27 @@ SoftEther VPN server also allows you to manage virtual hubs and their policies. 
  `VpnAzureGetStatus`          - Show the current status of VPN Azure function   
  `VpnAzureSetEnable`          - Enable / Disable VPN Azure Function   
  `VpnOverIcmpDnsEnable`       - Enable / Disable the VPN over ICMP / VPN over DNS Server Function   
- `VpnOverIcmpDnsGet`          - Get Current Setting of the VPN over ICMP / VPN over DNS Function   
+ `VpnOverIcmpDnsGet`          - Get Current Setting of the VPN over ICMP / VPN over DNS Function  
+ 
+ 
+ ## Copyright & Credit
+ The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/
+ The SoftEther VPN Developer branch is located here: https://github.com/SoftEtherVPN/SoftEtherVPN
+ 
+ I have not modified the code of the SoftEther VPN Project itself. I simply provide an installer that will make your life *just a little easier*.
+ 
+ For reference, their copyright statement is below.
+ 
+ ```
+ Copyright (c) SoftEther Project at University of Tsukuba, Japan.
+
+The development of SoftEther VPN was supported by the MITOH Project,
+a research and development project by Japanese Government,
+subsidized by METI (Ministry of Economy, Trade and Industry of Japan),
+administrated by IPA (Information Promotion Agency, Japan).
+https://www.ipa.go.jp/english/humandev/
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2
+as published by the Free Software Foundation.
+```
