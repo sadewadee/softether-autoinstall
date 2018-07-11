@@ -66,6 +66,15 @@ SoftEther VPN server allows you to manage users and their policies. Below are so
 `UserPolicySet` - Sets a policy for a specified user | It is recommended that you enable "Privacy Filter Mode" on all newly created users on the same hub, unless you WANT them to see each other. To do this, type `UserPolicySet` then when it asks for what policy, type `PrivacyFilter`. It will ask for the new value, to enable it enter `1`, to disable it enter `0`.   
 `UserPolicyRemove` - Removes a policy from a specified user
 
+#### Manage Hubs & Hub Policies
+SoftEther VPN server also allows you to manage virtual hubs and their policies. Below are some popular commands and descriptions on what they do. Remember that you first have to select a hub before you can manage it.
+
+`Hub [HubName]` - Selects a hub for management   
+`HubCreate [HubName]` - Creates a new virtual hub   
+`HubDelete [HubName]` - Deletes a specified hub   
+`HubList` - Lists the virtual hubs on the VPN server   
+`AdminOptionList` - Get List of Virtual Hub Administration Options   
+`AdminOptionSet` - Set Values of Virtual Hub Administration Options   
 
 ### Commands List 
 
