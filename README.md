@@ -1,6 +1,19 @@
 # SoftEther Autoinstaller
 
-This is my SoftEther autoinstaller. This will compile and install SoftEther onto your server. This installer in particular will set up SoftEther as a system service. Currently Ubuntu and CentOS are supported.
+This is my SoftEther autoinstaller. This script will *hopefully* make your life a little easier. I have not made **any** modifications to the SoftEther VPN Project code at all, this script simply downloads the latest build and compiles it for use on your supported system.
+
+## Contents
+### Install
+[Ubuntu 16.04+](https://github.com/icoexist/softether-autoinstall#64-bit)
+[CentOS](https://github.com/icoexist/softether-autoinstall#centos)
+
+### Configure SoftEther VPN Server
+[Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)
+[Other Options](https://github.com/icoexist/softether-autoinstall#other-options)
+[Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)
+
+### Copyright & Credit
+[Information](https://github.com/icoexist/softether-autoinstall#copyright--credit)
 
 ## Ubuntu 16.04+
 ### 64-bit
