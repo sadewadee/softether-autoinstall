@@ -4,13 +4,13 @@ This is my SoftEther autoinstaller. This script will *hopefully* make your life 
 
 ## Contents
 ### Install
-[Ubuntu 16.04+](https://github.com/icoexist/softether-autoinstall#64-bit)
-[CentOS](https://github.com/icoexist/softether-autoinstall#centos)
+[Ubuntu 16.04+](https://github.com/icoexist/softether-autoinstall#64-bit)   
+[CentOS](https://github.com/icoexist/softether-autoinstall#centos)   
 
 ### Configure SoftEther VPN Server
-[Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)
-[Other Options](https://github.com/icoexist/softether-autoinstall#other-options)
-[Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)
+[Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
+[Other Options](https://github.com/icoexist/softether-autoinstall#other-options)   
+[Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
 
 ### Copyright & Credit
 [Information](https://github.com/icoexist/softether-autoinstall#copyright--credit)
