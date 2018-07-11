@@ -286,7 +286,7 @@ SoftEther VPN server also allows you to manage virtual hubs and their policies. 
  
  
  ## Copyright & Credit
- The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/
+ The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/   
  The SoftEther VPN Developer branch is located here: https://github.com/SoftEtherVPN/SoftEtherVPN
  
  I have not modified the code of the SoftEther VPN Project itself. I simply provide an installer that will make your life *just a little easier*.
