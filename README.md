@@ -46,6 +46,27 @@ This section will provide you with a list of things to get you started with your
    
 If everything was done properly, you're ready to use your new VPN server! To add new users, just launch the `vpncmd` utility and repeat steps 3 - 5.
 
+### Other Options
+#### Change SoftEther Ports
+You can change the ports that SoftEther VPN server will use to listen for incoming connections. If you're using the `vpncmd` utility, you can list the current ports with `listenerlist`.
+
+`ListenerCreate` - Creates a new listener on a specified port   
+`ListenerDelete` - Deletes a listener on a specfied port   
+`ListenerEnable` - Enables a listener on a specified port   
+`ListenerDisable` - Disables a listener on a specified port
+
+#### Manage Users & User Policies
+SoftEther VPN server allows you to manage users and their policies. Below are some popular commands and descriptions on what they do. Remember that you first have to select a hub before you can manage users, as each hub has its own users.
+
+`UserList` - Displays a list of users   
+`UserGet [username]` - Displays information on a specified user   
+`UserCreate [username]` - Creates a user   
+`UserPasswordSet [username]` - Sets a password for specified user   
+`UserDelete` - Deletes a specified user   
+`UserPolicySet` - Sets a policy for a specified user | It is recommended that you enable "Privacy Filter Mode" on all newly created users on the same hub, unless you WANT them to see each other. To do this, type `UserPolicySet` then when it asks for what policy, type `PrivacyFilter`. It will ask for the new value, to enable it enter `1`, to disable it enter `0`.   
+`UserPolicyRemove` - Removes a policy from a specified user
+
+
 ### Commands List 
 
  `About`                      - Display the version information   
