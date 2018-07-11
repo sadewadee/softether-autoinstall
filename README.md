@@ -15,7 +15,7 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
 
 ### Copyright & Credit
-[Information](https://github.com/icoexist/softether-autoinstall#copyright--credit)
+[Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
 ## Ubuntu 16.04+
 ### 64-bit
