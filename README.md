@@ -53,7 +53,7 @@ This section will provide you with a list of things to get you started with your
 1. Start the `vpncmd` utility with `sudo /usr/local/vpncmd`
 2. Set a server password with `ServerPasswordSet`
 3. Select the DEFAULT hub with `hub default`
-4. Create a new user with `UserCreate` | You can either use `UserCreate` or `UserCreate [uesrname]`
+4. Create a new user with `UserCreate` | You can either use `UserCreate` or `UserCreate [username]`
 5. Set a password for the new user with `UserPasswordSet` | You can either use `UserPasswordSet` or `UserPasswordSet [username]`
 6. Enable SecureNAT for the DEFAULT hub with `SecurenatEnable`
 
