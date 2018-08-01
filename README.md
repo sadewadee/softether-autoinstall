@@ -1,3 +1,5 @@
+# WARNING: This is the beta branch!
+
 # SoftEther Autoinstaller
 
 This is my SoftEther autoinstaller. This script will *hopefully* make your life a little easier. I have not made **any** modifications to the SoftEther VPN Project code at all, this script simply downloads the latest build and compiles it for use on your supported system.
