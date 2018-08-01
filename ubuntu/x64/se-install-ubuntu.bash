@@ -65,8 +65,8 @@ printf "\nDo you plan to use L2TP/IPsec on this server (y/n)?\n\n"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   ufw allow 500,1701,4500/udp
-  printf "\nPorts 500/UDP, 1701/UDP & 4500/UDP were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver vpncmd${NC}.\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6"
+  printf "\nPorts 500/UDP, 1701/UDP & 4500/UDP were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver vpncmd${NC}.\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n"
 else
-  printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver vpncmd${NC}.\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6"
+  printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver vpncmd${NC}.\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n"
 fi
 esac
