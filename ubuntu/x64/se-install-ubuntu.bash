@@ -2,17 +2,17 @@
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 (( EUID != 0 )) && exec sudo -- "$0" "$@"
-read -r -p "This will install SoftEther to your server. Are you sure you want to continue? [y/N] " response
+read -r -p "This will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
-echo "'build-essential' and 'checkinstall' are required. Installing those now."
+printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
 apt update && apt upgrade -y && apt install checkinstall build-essential -y
-echo "Downloading last stable release: 4.27"
+printf "\nDownloading last stable release: 4.27\n\n"
 sleep 2
 wget  -O softether-vpn-4.27.tar.gz http://softether-download.com/files/softether/v4.27-9668-beta-2018.05.29-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
-echo -e "${RED}Please press 1 for all the following questions.${NC}"
+printf "\nPlease press 1 for all the following questions.\n\n"
 sleep 1
 make
 cd ..
@@ -53,19 +53,20 @@ echo "Usage: $0 {start|stop|restart}"
 exit 1
 esac
 exit 0' > /etc/init.d/vpnserver
-echo "System daemon created. Registering changes..."
+printf "\nSystem daemon created. Registering changes...\n\n"
 sleep 2
 chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
-echo -e "${RED}SoftEther VPN Server should now start as a system service from now on. To check status type 'systemctl status vpnserver'${NC}"
+printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
 systemctl start vpnserver
-echo -e "${RED}Now opening ports 443/TCP, 1194/TCP & 5555/TCP for basic usage.${NC}"
+printf "\nNow opening ports 443/TCP, 1194/TCP & 5555/TCP for basic usage.\n\n"
 ufw allow 443,1194,5555/tcp
-echo -n "Do you plan to use L2TP/IPsec on this server (y/n)? If so, I will open those ports for you. If you use GCP or other Cloud Platforms, you may need to go to your dashboard and allow these ports as well.${NC}"
+printf "\nDo you plan to use L2TP/IPsec on this server (y/n)?\n\n"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   ufw allow 500,1701,4500/udp
+  printf "\nPorts 500/UDP, 1701/UDP & 4500/UDP were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\n"
 else
-  echo -e "Alright, no ports for L2TP/IPsec were opened."
+  printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\n"
 fi
 esac
