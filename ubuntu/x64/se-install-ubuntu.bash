@@ -61,10 +61,11 @@ echo -e "${RED}SoftEther VPN Server should now start as a system service from no
 systemctl start vpnserver
 echo -e "${RED}Now opening ports 443/TCP, 1194/TCP & 5555/TCP for basic usage."
 ufw allow 443,1194,5555/tcp
-echo -n "Do you plan to use L2TP/IPsec on this server (y/n)? If so, I will open those ports for you. If you use GCP or other Cloud Platforms, you may need to go to your dashboard and allow these ports as well."
+echo -n "Do you plan to use L2TP/IPsec on this server (y/n)? If so, I will open those ports for you. If you use GCP or other Cloud Platforms, you may need to go to your dashboard and allow these ports as well.${NC}"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   ufw allow 500,1701,4500/udp
 else
   echo -e "Alright, no ports for L2TP/IPsec were opened."
+fi
 esac
