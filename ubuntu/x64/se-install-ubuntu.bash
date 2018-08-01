@@ -5,7 +5,7 @@ NC='\033[0m' # No Color
 read -r -p "This will install SoftEther to your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
-echo "Updating the system first..."
+echo "'build-essential' and 'checkinstall' are required. Installing those now."
 apt update && apt upgrade -y && apt install checkinstall build-essential -y
 echo "Downloading last stable release: 4.27"
 sleep 2
@@ -59,7 +59,7 @@ chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
 echo -e "${RED}SoftEther VPN Server should now start as a system service from now on. To check status type 'systemctl status vpnserver'${NC}"
 systemctl start vpnserver
-echo -e "${RED}Now opening ports 443/TCP, 1194/TCP & 5555/TCP for basic usage."
+echo -e "${RED}Now opening ports 443/TCP, 1194/TCP & 5555/TCP for basic usage.${NC}"
 ufw allow 443,1194,5555/tcp
 echo -n "Do you plan to use L2TP/IPsec on this server (y/n)? If so, I will open those ports for you. If you use GCP or other Cloud Platforms, you may need to go to your dashboard and allow these ports as well.${NC}"
 read answer
