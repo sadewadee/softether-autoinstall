@@ -9,7 +9,7 @@ printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. I
 apt update && apt upgrade -y && apt install checkinstall build-essential -y
 printf "\nDownloading last stable release: 4.27\n\n"
 sleep 2
-wget  -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
+wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
 printf "\nPlease press 1 for all the following questions.\n\n"
