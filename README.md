@@ -22,7 +22,7 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 ## Ubuntu 16.04+
 ### 64-bit
 ```bash
-wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 770 install && ./install
+wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/tree/beta/ubuntu/x64/se-install-ubuntu.bash && chmod 770 install && ./install
 ```
 
 ### 32-bit
