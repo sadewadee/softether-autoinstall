@@ -5,8 +5,13 @@ NC='\033[0m' # No Color
 read -r -p "This will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
+printf "\nMaking sure that the no previous downloads/folders in this current directory.\n\n"
+rm softether* > /dev/null 2>&1
+rm -rf vpnserver > /dev/null 2>&1
+update-rc.d vpnserver remove > /dev/null 2>&1
+rm /etc/init.d/vpnserver > /dev/null 2>&1
 printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
-apt update && apt upgrade -y && apt install checkinstall build-essential -y
+apt update && apt install checkinstall build-essential -y
 printf "\nDownloading last stable release: 4.27\n\n"
 sleep 2
 wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x86-32bit.tar.gz
@@ -65,8 +70,10 @@ printf "\nDo you plan to use L2TP/IPsec on this server (y/n)?\n\n"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   ufw allow 500,1701,4500/udp
-  printf "\nPorts 500/UDP, 1701/UDP & 4500/UDP were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
+  printf "\nPorts 500/UDP, 1701/UDP & 4500/UDP were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
 else
-  printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
+  printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
 fi
+printf "\nCleaning up...\n\n"
+cd ~ && rm install && rm softether*
 esac
