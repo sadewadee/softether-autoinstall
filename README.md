@@ -10,7 +10,7 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 [CentOS](https://github.com/icoexist/softether-autoinstall#centos)
 
 ### Uninstall
-[Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server)
+[Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
 
 ### Configure SoftEther VPN Server
 [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
