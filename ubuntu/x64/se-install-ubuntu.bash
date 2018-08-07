@@ -74,5 +74,5 @@ else
 fi
 printf "\nCleaning up...\n\n"
 cd ~ && rm softether* > /dev/null 2>&1
-printf "\n${RED}Remember${NC} that if you opened ports for L2TP, you'll ned to manually enable UFW for the ports to be actively opened. Make sure you've allowed SSH access through your firewall with ${RED}ufw allow ssh${NC} before enabling UFW with ${RED}ufw enable${NC}\n\n"
+printf "\n${RED}Remember${NC} that if you opened ports for L2TP, you'll need to manually enable UFW for the ports to be actively opened. Make sure you've allowed SSH access through your firewall with ${RED}ufw allow ssh${NC} before enabling UFW with ${RED}ufw enable${NC}\n\n"
 esac
