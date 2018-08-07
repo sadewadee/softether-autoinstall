@@ -73,5 +73,6 @@ else
   printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
 fi
 printf "\nCleaning up...\n\n"
-cd ~ && rm softether-autoinstall > /dev/null 2>&1 && rm softether* > /dev/null 2>&1
+cd ~ && rm softether* > /dev/null 2>&1
+printf "\n${RED}Remember${NC} that if you opened ports for L2TP, you'll ned to manually enable UFW for the ports to be actively opened. Make sure you've allowed SSH access through your firewall with ${RED}ufw allow ssh${NC} before enabling UFW with ${RED}ufw enable${NC}\n\n"
 esac
