@@ -19,7 +19,7 @@ wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
 printf "\n${RED}Please press 1 for all the following questions.${NC}\n\n"
-sleep 3
+sleep 2
 make
 cd ~
 mv ~/vpnserver /usr/local/
@@ -74,5 +74,5 @@ else
 fi
 printf "\nCleaning up...\n\n"
 cd ~ && rm softether* > /dev/null 2>&1
-printf "\n${RED}Remember${NC} that if you opened ports for L2TP, you'll need to manually enable UFW for the ports to be actively opened. Make sure you've allowed SSH access through your firewall with ${RED}ufw allow ssh${NC} before enabling UFW with ${RED}ufw enable${NC}\n\n"
+printf "\n${RED}Remember${NC} that if you opened ports for L2TP, you'll need to manually enable UFW for the ports to be actively opened.\nMake sure you've allowed SSH access through your firewall with ${RED}ufw allow ssh${NC} before enabling UFW with ${RED}ufw enable${NC}\n\n"
 esac
