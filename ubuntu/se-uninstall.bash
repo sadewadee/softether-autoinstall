@@ -14,7 +14,7 @@ service vpnserver stop > /dev/null 2>&1
 update-rc.d vpnserver remove > /dev/null 2>&1
 rm /etc/init.d/vpnserver > /dev/null 2>&1
 rm -rf /usr/local/vpnserver > /dev/null 2>&1
-printf "\nDone. Do you want to download and run the softether-autoinstall script?\n\b"
+printf "\nDone. Do you want to download and run the softether-autoinstall script? [y/N]\n\b"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-autoinstall && ./se-autoinstall
