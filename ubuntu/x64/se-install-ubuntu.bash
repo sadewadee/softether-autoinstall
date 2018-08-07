@@ -2,6 +2,7 @@
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 (( EUID != 0 )) && exec sudo -- "$0" "$@"
+clear
 read -r -p "This will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
@@ -13,13 +14,12 @@ update-rc.d vpnserver remove > /dev/null 2>&1
 rm /etc/init.d/vpnserver > /dev/null 2>&1
 printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
 apt update && apt install checkinstall build-essential -y
-printf "\nDownloading last stable release: 4.27\n\n"
-sleep 2
+printf "\nDownloading last stable release: ${RED}4.27${NC} | Build ${RED}9668${NC}\n\n"
 wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
 printf "\n${RED}Please press 1 for all the following questions.${NC}\n\n"
-sleep 1
+sleep 3
 make
 cd ~
 mv ~/vpnserver /usr/local/
@@ -73,5 +73,5 @@ else
   printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
 fi
 printf "\nCleaning up...\n\n"
-cd ~ && rm install && rm softether* > /dev/null 2>&1
+cd ~ && rm softether-autoinstall > /dev/null 2>&1 && rm softether* > /dev/null 2>&1
 esac
