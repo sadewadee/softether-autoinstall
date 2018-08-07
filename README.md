@@ -22,14 +22,19 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 ## Ubuntu 16.04+
 ### 64-bit
 ```bash
-wget -O softether-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x64/se-install-ubuntu.bash && chmod 770 softether-autoinstall && ./softether-autoinstall
+wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-autoinstall && ./se-autoinstall
 ```
 
 ### 32-bit
 ```bash
-wget -O softether-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x86/se-install-ubuntu-x86.bash && chmod 770 softether-autoinstall && ./softether-autoinstall
+wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x86/se-install-ubuntu-x86.bash && chmod 770 se-autoinstall && ./se-autoinstall
 ```
 Please bear in mind that running 32-bit versions of Ubuntu server is not recommended, and Ubuntu 18.04 is **not** available in a 32-bit version.
+
+### Uninstall SoftEtherVPN
+```bash
+wget -O se-uninstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
+```
 
 ## CentOS
 ### 64-bit
