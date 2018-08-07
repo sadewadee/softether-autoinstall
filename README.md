@@ -7,7 +7,10 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 ## Contents
 ### Install
 [Ubuntu 16.04+](https://github.com/icoexist/softether-autoinstall#64-bit)   
-[CentOS](https://github.com/icoexist/softether-autoinstall#centos)   
+[CentOS](https://github.com/icoexist/softether-autoinstall#centos)
+
+### Uninstall
+[Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server)
 
 ### Configure SoftEther VPN Server
 [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
@@ -28,11 +31,6 @@ wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-auto
 wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x86/se-install-ubuntu-x86.bash && chmod 770 se-autoinstall && ./se-autoinstall
 ```
 Please bear in mind that running 32-bit versions of Ubuntu server is not recommended, and Ubuntu 18.04 is **not** available in a 32-bit version.
-
-### Uninstall SoftEtherVPN
-```bash
-wget -O se-uninstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
-```
 
 ## CentOS
 ### 64-bit
@@ -304,17 +302,22 @@ SoftEther VPN server also allows you to manage virtual hubs and their policies. 
  `VpnOverIcmpDnsEnable`       - Enable / Disable the VPN over ICMP / VPN over DNS Server Function   
  `VpnOverIcmpDnsGet`          - Get Current Setting of the VPN over ICMP / VPN over DNS Function  
 
+## Uninstall SE-VPN Server [Ubuntu Only]
+As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
+```
+wget -O se-uninstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
+```
 
- ## Copyright & Credit
- The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/   
- The SoftEther VPN Developer branch is located here: https://github.com/SoftEtherVPN/SoftEtherVPN
+## Copyright & Credit
+The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/   
+The SoftEther VPN Developer branch is located here: https://github.com/SoftEtherVPN/SoftEtherVPN
 
- I have not modified the code of the SoftEther VPN Project itself. I simply provide an installer that will make your life *just a little easier*.
+I have not modified the code of the SoftEther VPN Project itself. I simply provide an installer that will make your life *just a little easier*.
 
- For reference, their copyright statement is below.
+For reference, their copyright statement is below.
 
- ```
- Copyright (c) SoftEther Project at University of Tsukuba, Japan.
+```
+Copyright (c) SoftEther Project at University of Tsukuba, Japan.
 
 The development of SoftEther VPN was supported by the MITOH Project,
 a research and development project by Japanese Government,
