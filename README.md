@@ -22,12 +22,12 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 ## Ubuntu 16.04+
 ### 64-bit
 ```bash
-wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x64/se-install-ubuntu.bash && chmod 770 install && ./install
+wget -O softether-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x64/se-install-ubuntu.bash && chmod 770 softether-autoinstall && ./softether-autoinstall
 ```
 
 ### 32-bit
 ```bash
-wget -O install https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x86/se-install-ubuntu-x86.bash && chmod 770 install && ./install
+wget -O softether-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/beta/ubuntu/x86/se-install-ubuntu-x86.bash && chmod 770 softether-autoinstall && ./softether-autoinstall
 ```
 Please bear in mind that running 32-bit versions of Ubuntu server is not recommended, and Ubuntu 18.04 is **not** available in a 32-bit version.
 
@@ -60,7 +60,7 @@ This section will provide you with a list of things to get you started with your
 6. Enable SecureNAT for the DEFAULT hub with `SecurenatEnable`
 
    Optional: You can enable L2TP/IPsec with `IpsecEnable`. It is recommended that if you use this option, you only enable L2TP/IPsec. Do not enable RAW L2TP w/o encrpytion. You will be asked to set a pre-shared key for the IPsec server, you can use anything. I've used `vpn` as a pre-shared key for ages. Remember that this is NOT a password for the server or a user, so it's safe to use that. You'll also be asked for the default hub in the event that a user does not specify the hub to connect to in their username, you'll set this to `default` if you haven't changed any hub names. If you're more advanced user and have multiple hubs, you can specify what hub a user connects to by putting it in their username on the client. For instance `icoexist@public` or `icoexist@hub2`.
-   
+
 If everything was done properly, you're ready to use your new VPN server! To add new users, just launch the `vpncmd` utility and repeat steps 3 - 5.
 
 ### Other Options
@@ -93,7 +93,7 @@ SoftEther VPN server also allows you to manage virtual hubs and their policies. 
 `AdminOptionList` - Get List of Virtual Hub Administration Options   
 `AdminOptionSet` - Set Values of Virtual Hub Administration Options   
 
-### Commands List 
+### Commands List
 
  `About`                      - Display the version information   
  `AcAdd`                      - Add Rule to Source IP Address Limit List (IPv4)   
@@ -300,16 +300,16 @@ SoftEther VPN server also allows you to manage virtual hubs and their policies. 
  `VpnAzureSetEnable`          - Enable / Disable VPN Azure Function   
  `VpnOverIcmpDnsEnable`       - Enable / Disable the VPN over ICMP / VPN over DNS Server Function   
  `VpnOverIcmpDnsGet`          - Get Current Setting of the VPN over ICMP / VPN over DNS Function  
- 
- 
+
+
  ## Copyright & Credit
  The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/   
  The SoftEther VPN Developer branch is located here: https://github.com/SoftEtherVPN/SoftEtherVPN
- 
+
  I have not modified the code of the SoftEther VPN Project itself. I simply provide an installer that will make your life *just a little easier*.
- 
+
  For reference, their copyright statement is below.
- 
+
  ```
  Copyright (c) SoftEther Project at University of Tsukuba, Japan.
 
