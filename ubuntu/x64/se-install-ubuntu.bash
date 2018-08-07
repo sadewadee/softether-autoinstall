@@ -5,7 +5,8 @@ NC='\033[0m' # No Color
 read -r -p "This will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
-printf "\nMaking sure that the no previous downloads/folders in this current directory.\n\n"
+printf "\nMaking sure that there are no previous SoftEther downloads/folders in this current directory.\n\n"
+cd ~
 rm softether* > /dev/null 2>&1
 rm -rf vpnserver > /dev/null 2>&1
 update-rc.d vpnserver remove > /dev/null 2>&1
@@ -17,14 +18,12 @@ sleep 2
 wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
-printf "\nPlease press 1 for all the following questions.\n\n"
+printf "\n${RED}Please press 1 for all the following questions.${NC}\n\n"
 sleep 1
 make
-cd ..
-mv vpnserver /usr/local/
-chmod 600 /usr/local/vpnserver/*
-chmod 700 /usr/local/vpnserver/vpncmd
-chmod 700 /usr/local/vpnserver/vpnserver
+cd ~
+mv ~/vpnserver /usr/local/
+chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
 echo '#!/bin/sh
 # description: SoftEther VPN Server
 ### BEGIN INIT INFO
@@ -59,7 +58,6 @@ exit 1
 esac
 exit 0' > /etc/init.d/vpnserver
 printf "\nSystem daemon created. Registering changes...\n\n"
-sleep 2
 chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
@@ -75,5 +73,5 @@ else
   printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
 fi
 printf "\nCleaning up...\n\n"
-cd ~ && rm install && rm softether*
+cd ~ && rm install && rm softether* > /dev/null 2>&1
 esac
