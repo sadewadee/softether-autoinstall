@@ -62,8 +62,8 @@ chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
 systemctl start vpnserver
-printf "\nNow opening ports 443/TCP, 1194/TCP & 5555/TCP for basic usage.\n\n"
-ufw allow 443,1194,5555/tcp
+printf "\nNow opening ports for SSH and SoftEther.\n\n"
+ufw allow 443,1194,5555/tcp && ufw allow ssh
 printf "\nDo you plan to use L2TP/IPsec on this server (y/n)?\n\n"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
@@ -72,7 +72,8 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
 else
   printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
 fi
+printf "\nEnabling UFW...\n\n"
+ufw enable
 printf "\nCleaning up...\n\n"
 cd ~ && rm softether* > /dev/null 2>&1
-printf "\n${RED}Remember${NC} that if you opened ports for L2TP, you'll need to manually enable UFW for the ports to be actively opened.\nMake sure you've allowed SSH access through your firewall with ${RED}ufw allow ssh${NC} before enabling UFW with ${RED}ufw enable${NC}\n\n"
 esac
