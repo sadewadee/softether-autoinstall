@@ -6,8 +6,10 @@ clear
 read -r -p "This will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
+
 # Create & CD into working directory
 printf "\nMaking sure that there are no previous SoftEther downloads/folders in this current directory.\n\n"
+rm -rf se-vpn > /dev/null 2>&1
 cd ~ && mkdir se-vpn && cd se-vpn
 rm softether* > /dev/null 2>&1
 rm -rf vpnserver > /dev/null 2>&1
@@ -15,6 +17,7 @@ update-rc.d vpnserver remove > /dev/null 2>&1
 rm /etc/init.d/vpnserver > /dev/null 2>&1
 printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
 apt update && apt install checkinstall build-essential -y
+
 # Download SoftEther | Version 4.27 | Build 9668
 printf "\nDownloading last stable release: ${RED}4.27${NC} | Build ${RED}9668${NC}\n\n"
 wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
@@ -26,6 +29,8 @@ echo $'1\n1\n1' | make
 cd ~/se-vpn
 mv vpnserver/ /usr/local/
 chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
+
+# Start init script & apply
 echo '#!/bin/sh
 # description: SoftEther VPN Server
 ### BEGIN INIT INFO
@@ -59,23 +64,18 @@ echo "Usage: $0 {start|stop|restart}"
 exit 1
 esac
 exit 0' > /etc/init.d/vpnserver
+#End init script
 printf "\nSystem daemon created. Registering changes...\n\n"
 chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
-systemctl start vpnserver
+
+# Open ports for SoftEther VPN Server
 printf "\nNow opening ports for SSH and SoftEther.\n\n"
-ufw allow 443,1194,5555/tcp && ufw allow ssh
-printf "\nDo you plan to use L2TP/IPsec on this server (y/n)?\n\n"
-read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-  ufw allow 500,1701,4500/udp
-  printf "\nPorts 500/UDP, 1701/UDP & 4500/UDP were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
-else
-  printf "\nAlright, no ports for L2TP/IPsec were opened.\n\nTo check the status of the VPN server, type ${RED}systemctl status vpnserver${NC}\n\nTo manage the server, type ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nYou can also download the SE VPN manager here: http://bit.ly/2v6xmU6\n\n"
-fi
+ufw allow 443,1194,5555/tcp && ufw allow 500,1701,4500/udp && ufw allow ssh
 printf "\nEnabling UFW...\n\n"
-printf "y" | ufw enable
+yes | ufw enable
+systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd ~ && rm -rf se-vpn/ > /dev/null 2>&1
 esac
