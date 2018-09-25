@@ -78,4 +78,6 @@ yes | ufw enable
 systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd ~ && rm -rf se-vpn/ > /dev/null 2>&1
+systemctl status vpnserver
+printf "\nIf the output above shows vpnserver.service to be active, then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: https://bit.ly/2NFGNWa\n\n"
 esac
