@@ -40,7 +40,7 @@ Please bear in mind that running 32-bit versions of Ubuntu server is not recomme
 ## CentOS
 ### 64-bit
 ```bash
-curl -o install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 install && ./install
+curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
 ```
 
 ### 32-bit
