@@ -74,7 +74,7 @@ chkconfig --add vpnserver
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
 
 # Open ports for SoftEther VPN Server using firewalld
-printf "\nNow opening ports for SSH and SoftEther.\n\nIf you use another port for SSH, please run ${RED}firewall-cmd --zone=public --add-port=x/tcp${NC} where x = your SSH port.\n\n"
+printf "\nNow opening ports for SSH and SoftEther.\n\nIf you use another port for SSH, please run ${RED}firewall-cmd --zone=public --permanent --add-port=x/tcp${NC} where x = your SSH port.\n\n"
 echo '<?xml version="1.0" encoding="utf-8"?>
 <service>
   <short>sevpn</short>
