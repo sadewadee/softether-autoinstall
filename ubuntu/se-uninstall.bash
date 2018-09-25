@@ -14,6 +14,7 @@ service vpnserver stop > /dev/null 2>&1
 update-rc.d vpnserver remove > /dev/null 2>&1
 rm /etc/init.d/vpnserver > /dev/null 2>&1
 rm -rf /usr/local/vpnserver > /dev/null 2>&1
+rm -rf vpn* > /dev/null 2>&1
 printf "\nDone. Do you want to download and run the softether-autoinstall script? [y/N]\n\b"
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
