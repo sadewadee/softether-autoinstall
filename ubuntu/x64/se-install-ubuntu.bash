@@ -1,15 +1,19 @@
 #!/bin/bash
+
+# Define console colors
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 (( EUID != 0 )) && exec sudo -- "$0" "$@"
 clear
+
+# User confirmation
 read -r -p "This will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] " response
 case $response in
 [yY][eE][sS]|[yY])
 
 # Create & CD into working directory
 printf "\nMaking sure that there are no previous SoftEther downloads/folders in this current directory.\n\n"
-rm -rf se-vpn > /dev/null 2>&1
+cd ~ && rm -rf se-vpn > /dev/null 2>&1
 cd ~ && mkdir se-vpn && cd se-vpn
 rm softether* > /dev/null 2>&1
 rm -rf vpnserver > /dev/null 2>&1
@@ -30,7 +34,7 @@ cd ~/se-vpn
 mv vpnserver/ /usr/local/
 chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
 
-# Start init script & apply
+# Init script
 echo '#!/bin/sh
 # description: SoftEther VPN Server
 ### BEGIN INIT INFO
@@ -71,7 +75,7 @@ update-rc.d vpnserver defaults
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
 
 # Open ports for SoftEther VPN Server
-printf "\nNow opening ports for SSH and SoftEther.\n\n"
+printf "\nNow opening ports for SSH and SoftEther.\n\nIf you use another port for SSH, please run ${RED}ufw allow x\tcp${NC} where x = your SSH port."
 ufw allow 443,1194,5555/tcp && ufw allow 500,1701,4500/udp && ufw allow ssh
 printf "\nEnabling UFW...\n\n"
 yes | ufw enable
@@ -79,5 +83,5 @@ systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd ~ && rm -rf se-vpn/ > /dev/null 2>&1
 systemctl status vpnserver
-printf "\nIf the output above shows vpnserver.service to be active, then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: https://bit.ly/2NFGNWa\n\n"
+printf "\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: https://bit.ly/2NFGNWa\n\n"
 esac
