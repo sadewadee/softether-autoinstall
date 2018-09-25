@@ -4,9 +4,14 @@ This is my SoftEther autoinstaller. This script will *hopefully* make your life 
 
 To get started, all you have to do is copy/paste the provided code for your OS. The script will handle everything else for you. Refer to the [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide) if you need to get set up quickly. Also refer to the [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list) should you need them.
 
+### Please note!
+The Ubuntu installer is created for and on Ubuntu 16.04 LTS. It is **strongly** recommended that you use Ubuntu 16.04 LTS when using the Ubuntu installer.
+
+The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** recommended that you use CentOS 7 Minimal when using the CentOS installer.
+
 ## Contents
 ### Install
-[Ubuntu 16.04+](https://github.com/icoexist/softether-autoinstall#64-bit)   
+[Ubuntu 16.04.x LTS](https://github.com/icoexist/softether-autoinstall#64-bit)   
 [CentOS](https://github.com/icoexist/softether-autoinstall#centos)
 
 ### Uninstall
