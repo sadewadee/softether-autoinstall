@@ -11,7 +11,7 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 
 ## Contents
 ### Install
-[Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#ubuntu-1604-lts--centos-7)
+[Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)
 
 ### Uninstall
 [Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
