@@ -28,11 +28,11 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 ### 64-bit
 #### Ubuntu 16.04 LTS
 ```bash
-wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
+wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
 ```
 #### CentOS 7
 ```bash
-curl -o se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
+curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
 ```
 
 ## Uninstall SE-VPN Server [Ubuntu Only]
