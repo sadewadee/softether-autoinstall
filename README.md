@@ -4,14 +4,14 @@ This is my SoftEther autoinstaller. This script will *hopefully* make your life 
 
 To get started, all you have to do is copy/paste the provided code for your OS. The script will handle everything else for you. Refer to the [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide) if you need to get set up quickly. Also refer to the [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list) should you need them.
 
-### Please note!
+### Please note:
 The Ubuntu installer is created for and on Ubuntu 16.04 LTS. It is **strongly** recommended that you use Ubuntu 16.04 LTS when using the Ubuntu installer.
 
 The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** recommended that you use CentOS 7 Minimal when using the CentOS installer.
 
 ## Contents
 ### Install
-[Ubuntu 16.04.x LTS](https://github.com/icoexist/softether-autoinstall#64-bit)   
+[Ubuntu 16.04 LTS](https://github.com/icoexist/softether-autoinstall#64-bit)   
 [CentOS 7](https://github.com/icoexist/softether-autoinstall#centos)
 
 ### Uninstall
@@ -25,7 +25,7 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 ### Copyright & Credit
 [Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
-## Ubuntu 16.04+
+## Ubuntu 16.04
 ### 64-bit
 ```bash
 wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-autoinstall && ./se-autoinstall
@@ -45,6 +45,12 @@ curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinst
 
 ### 32-bit
 [WIP]
+
+## Uninstall SE-VPN Server [Ubuntu Only]
+As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
+```
+wget -O se-uninstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
+```
 
 ## Configure SoftEther
 ### Execute vpncmd
@@ -306,12 +312,6 @@ SoftEther VPN server also allows you to manage virtual hubs and their policies. 
  `VpnAzureSetEnable`          - Enable / Disable VPN Azure Function   
  `VpnOverIcmpDnsEnable`       - Enable / Disable the VPN over ICMP / VPN over DNS Server Function   
  `VpnOverIcmpDnsGet`          - Get Current Setting of the VPN over ICMP / VPN over DNS Function  
-
-## Uninstall SE-VPN Server [Ubuntu Only]
-As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
-```
-wget -O se-uninstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
-```
 
 ## Copyright & Credit
 The SoftEther VPN Project is managed by Daiyuu Nobori, the creator and owner of the SoftEther VPN Project. You can find their stable GitHub repo here: https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/   
