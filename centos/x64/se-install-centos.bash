@@ -26,50 +26,14 @@ printf "\nDownloading last stable release: ${RED}4.27${NC} | Build ${RED}9668${N
 curl -o softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
-printf "\n${RED}Please press 1 for all the following questions.${NC}\n\n"
-sleep 2
 echo $'1\n1\n1' | make
 cd ~/se-vpn
 mv vpnserver/ /usr/local/
 chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
-
-# Init script
-echo '#!/bin/sh
-# description: SoftEther VPN Server
-### BEGIN INIT INFO
-# Provides:          vpnserver
-# Required-Start:    $local_fs $network
-# Required-Stop:     $local_fs
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: softether vpnserver
-# Description:       softether vpnserver daemon
-### END INIT INFO
-DAEMON=/usr/local/vpnserver/vpnserver
-LOCK=/var/lock/subsys/vpnserver
-test -x $DAEMON || exit 0
-case "$1" in
-start)
-$DAEMON start
-touch $LOCK
-;;
-stop)
-$DAEMON stop
-rm $LOCK
-;;
-restart)
-$DAEMON stop
-sleep 3
-$DAEMON start
-;;
-*)
-echo "Usage: $0 {start|stop|restart}"
-exit 1
-esac
-exit 0' > /etc/init.d/vpnserver
-
-printf "\nSystem daemon created. Registering changes...\n\n"
+cd ~/se-vpn && curl -o vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init
+mv vpnserver-init /etc/init.d/vpnserver
 chmod 755 /etc/init.d/vpnserver
+printf "\nSystem daemon created. Registering changes...\n\n"
 chkconfig --add vpnserver
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
 
