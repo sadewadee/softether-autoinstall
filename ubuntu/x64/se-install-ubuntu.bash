@@ -13,10 +13,8 @@ case $response in
 
 # Create & CD into working directory
 printf "\nMaking sure that there are no previous SoftEther downloads/folders in this current directory.\n\n"
-cd ~ && rm -rf se-vpn > /dev/null 2>&1
-cd ~ && mkdir se-vpn && cd se-vpn
-rm softether* > /dev/null 2>&1
-rm -rf vpnserver > /dev/null 2>&1
+rm -rf ~/se-vpn > /dev/null 2>&1
+mkdir ~/se-vpn && cd se-vpn
 update-rc.d vpnserver remove > /dev/null 2>&1
 rm /etc/init.d/vpnserver > /dev/null 2>&1
 printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
@@ -27,8 +25,7 @@ printf "\nDownloading last stable release: ${RED}4.27${NC} | Build ${RED}9668${N
 wget -O softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
-printf "\n${RED}Please press 1 for all the following questions.${NC}\n\n"
-sleep 2
+printf "\nCompiling SoftEther VPN Server...\n\n"
 echo $'1\n1\n1' | make
 cd ~/se-vpn
 mv vpnserver/ /usr/local/
@@ -68,20 +65,19 @@ echo "Usage: $0 {start|stop|restart}"
 exit 1
 esac
 exit 0' > /etc/init.d/vpnserver
-#End init script
 printf "\nSystem daemon created. Registering changes...\n\n"
 chmod 755 /etc/init.d/vpnserver
 update-rc.d vpnserver defaults
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
 
 # Open ports for SoftEther VPN Server
-printf "\nNow opening ports for SSH and SoftEther.\n\nIf you use another port for SSH, please run ${RED}ufw allow x\tcp${NC} where x = your SSH port."
+printf "\nNow opening ports for SSH and SoftEther.\n\nIf you use another port for SSH, please run ${RED}ufw allow x/tcp${NC} where x = your SSH port."
 ufw allow 443,1194,5555/tcp && ufw allow 500,1701,4500/udp && ufw allow ssh
 printf "\nEnabling UFW...\n\n"
 yes | ufw enable
 systemctl start vpnserver
 printf "\nCleaning up...\n\n"
-cd ~ && rm -rf se-vpn/ > /dev/null 2>&1
+cd ~ && rm -rf ~/se-vpn/ > /dev/null 2>&1
 systemctl status vpnserver
 printf "\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: https://bit.ly/2NFGNWa\n\n"
 esac
