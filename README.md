@@ -11,6 +11,7 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 
 ## Contents
 ### Install
+[Ubuntu 16.04 LTS / CentOS 7](https://github.com/icoexist/softether-autoinstall#ubuntu-16.04-lts-centos-7)
 [Ubuntu 16.04 LTS](https://github.com/icoexist/softether-autoinstall#64-bit)   
 [CentOS 7](https://github.com/icoexist/softether-autoinstall#centos)
 
@@ -25,26 +26,11 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 ### Copyright & Credit
 [Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
-## Ubuntu 16.04
+## Ubuntu 16.04 LTS / CentOS 7
 ### 64-bit
 ```bash
-wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-autoinstall && ./se-autoinstall
+wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
 ```
-
-### 32-bit
-```bash
-wget -O se-autoinstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x86/se-install-ubuntu-x86.bash && chmod 770 se-autoinstall && ./se-autoinstall
-```
-Please bear in mind that running 32-bit versions of Ubuntu server is not recommended, and Ubuntu 18.04 is **not** available in a 32-bit version.
-
-## CentOS
-### 64-bit
-```bash
-curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
-```
-
-### 32-bit
-[WIP]
 
 ## Uninstall SE-VPN Server [Ubuntu Only]
 As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
