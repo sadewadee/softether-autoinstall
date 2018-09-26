@@ -11,7 +11,7 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 
 ## Contents
 ### Install
-[Ubuntu 16.04 LTS / CentOS 7](https://github.com/icoexist/softether-autoinstall#ubuntu-1604-lts--centos-7)
+[Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#ubuntu-1604-lts--centos-7)
 
 ### Uninstall
 [Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
@@ -24,15 +24,14 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 ### Copyright & Credit
 [Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
-## Ubuntu 16.04 LTS / CentOS 7
-### 64-bit
+## Supported Operating Systems (64-bit only)
 #### Ubuntu 16.04 LTS
 ```bash
-wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
+wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-install && ./se-install
 ```
 #### CentOS 7
 ```bash
-curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/se-install && chmod 770 se-install && ./se-install
+curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
 ```
 
 ## Uninstall SE-VPN Server [Ubuntu Only]
