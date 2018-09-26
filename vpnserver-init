@@ -12,7 +12,7 @@
 DAEMON=/usr/local/vpnserver/vpnserver
 LOCK=/var/lock/subsys/vpnserver
 test -x $DAEMON || exit 0
-case \"$1\" in
+case "$1" in
 start)
 $DAEMON start
 touch $LOCK
@@ -27,7 +27,7 @@ sleep 3
 $DAEMON start
 ;;
 *)
-echo \"Usage: $0 {start|stop|restart}\"
+echo "Usage: $0 {start|stop|restart}"
 exit 1
 esac
 exit 0
