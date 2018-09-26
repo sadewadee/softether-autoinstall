@@ -29,11 +29,11 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 ```bash
 wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-install && ./se-install
 ```
+#### Ubuntu 18.04 LTS
 #### CentOS 7
 ```bash
 curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
 ```
-
 ## Uninstall SE-VPN Server [Ubuntu Only]
 As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
 ```
