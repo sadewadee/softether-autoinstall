@@ -87,6 +87,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
   <port protocol="udp" port="1701"/>
   <port protocol="udp" port="4500"/>
 </service>' > /etc/firewalld/services/sevpn.xml
+systemctl start firewalld
 firewall-cmd --reload
 firewall-cmd --zone=public --permanent --add-service=sevpn
 firewall-cmd --zone=public --permanent --add-service=ssh
