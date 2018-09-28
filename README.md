@@ -27,9 +27,11 @@ The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** 
 ## Supported Operating Systems (64-bit only)
 #### Ubuntu 16.04 LTS
 ```bash
-wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/x64/se-install-ubuntu.bash && chmod 770 se-install && ./se-install
+wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/16.04/se-install-ubuntu.bash && chmod +x se-install && ./se-install
 ```
 #### Ubuntu 18.04 LTS
+[In Progress]
+
 #### CentOS 7
 ```bash
 curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
