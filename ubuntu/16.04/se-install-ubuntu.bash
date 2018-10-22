@@ -18,6 +18,7 @@ mkdir ~/se-vpn && cd se-vpn
 update-rc.d vpnserver remove > /dev/null 2>&1
 rm /etc/init.d/vpnserver > /dev/null 2>&1
 printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
+add-apt-repository universe > /dev/null 2>&1
 apt update && apt install checkinstall build-essential -y
 
 # Download SoftEther | Version 4.27 | Build 9668
