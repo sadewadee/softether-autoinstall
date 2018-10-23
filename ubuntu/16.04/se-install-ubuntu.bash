@@ -40,6 +40,5 @@ systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd ~ && rm -rf ~/se-vpn/ > /dev/null 2>&1
 systemctl status vpnserver
-printf "\n${RED}Please read!${NC}\n\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\n"
-printf "UFW is not enabled with this script.\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\n"
+printf "\n${RED}Please read!${NC}\n\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\nUFW is not enabled with this script.\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
 esac
