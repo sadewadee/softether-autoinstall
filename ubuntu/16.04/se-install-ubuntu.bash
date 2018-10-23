@@ -23,23 +23,19 @@ apt update && apt install checkinstall build-essential -y
 
 # Download SoftEther | Version 4.27 | Build 9668
 printf "\nDownloading last stable release: ${RED}4.27${NC} | Build ${RED}9668${NC}\n\n"
-cd ~/se-vpn && wget -O softether-vpn-4.27.tar.gz https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
+cd ~/se-vpn && wget -O softether-vpn-4.27.tar.gz https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz > /dev/null 2>&1
 tar -xzf softether-vpn-4.27.tar.gz
 cd vpnserver
-echo $'1\n1\n1' | make
+echo $'1\n1\n1' | make > /dev/null 2>&1
 cd ~/se-vpn
 mv vpnserver/ /usr/local/
 chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
-cd ~/se-vpn && wget -O vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init
+cd ~/se-vpn && wget -O vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init > /dev/null 2>&1
 mv vpnserver-init /etc/init.d/vpnserver
 chmod 755 /etc/init.d/vpnserver
 printf "\nSystem daemon created. Registering changes...\n\n"
-update-rc.d vpnserver defaults
+update-rc.d vpnserver defaults > /dev/null 2>&1
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
-
-# Open ports for SoftEther VPN Server
-printf "\nNow opening ports for SSH and SoftEther.\n\n"
-ufw allow 443,1194,5555/tcp && ufw allow 500,1701,4500/udp && ufw allow ssh
 systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd ~ && rm -rf ~/se-vpn/ > /dev/null 2>&1

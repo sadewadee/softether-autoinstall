@@ -4,38 +4,39 @@ This is my SoftEther autoinstaller. This script will *hopefully* make your life 
 
 To get started, all you have to do is copy/paste the provided code for your OS. The script will handle everything else for you. Refer to the [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide) if you need to get set up quickly. Also refer to the [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list) should you need them.
 
-### Please note:
-The Ubuntu installer is created for and on Ubuntu 16.04 LTS. It is **strongly** recommended that you use Ubuntu 16.04 LTS when using the Ubuntu installer.
-
-The CentOS installer is created for and on CentOS 7 Minimal. It is **strongly** recommended that you use CentOS 7 Minimal when using the CentOS installer.
-
-## Contents
-### Install
-[Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)
+### Install & Configure
+[- Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)     
+[- Open Ports for SoftEther VPN](https://github.com/icoexist/softether-autoinstall#Open-Ports-for-SoftEther-VPN)
 
 ### Uninstall
-[Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
+[- Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
 
 ### Configure SoftEther VPN Server
-[Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
-[Other Options](https://github.com/icoexist/softether-autoinstall#other-options)   
-[Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
+[- Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
+[- Other Options](https://github.com/icoexist/softether-autoinstall#other-options)   
+[- Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
 
 ### Copyright & Credit
-[Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
+[- Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
 ## Supported Operating Systems (64-bit only)
-#### Ubuntu 16.04 LTS
+#### Ubuntu 16.04 LTS | 18.04 LTS
 ```bash
 wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/16.04/se-install-ubuntu.bash && chmod +x se-install && ./se-install
 ```
-#### Ubuntu 18.04 LTS
-[In Progress]
 
 #### CentOS 7
 ```bash
 curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
 ```
+## Open Ports for SoftEther VPN
+### Ubuntu
+In terminal, execute the following: `ufw allow 443,1194,5555/tcp && ufw allow 500,1701,4500/udp`    
+
+Please make sure you allow the port you use for SSH, otherwise you risk blocking inbound SSH connections. You can use `ufw allow ssh` or if you have set a custom port, use `ufw enable x/tcp` where `x = port`. For instance, if I use port `2222` for SSH, I'll use `ufw allow 2222/tcp`.    
+
+Now enable UFW with `ufw enable`.
+
 ## Uninstall SE-VPN Server [Ubuntu Only]
 As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
 ```
