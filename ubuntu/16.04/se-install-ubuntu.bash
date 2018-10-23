@@ -40,6 +40,6 @@ systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd ~ && rm -rf ~/se-vpn/ > /dev/null 2>&1
 systemctl status vpnserver
-printf "\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: https://bit.ly/2NFGNWa\n\n"
-printf "\n${RED}REMINDER:${NC}\n\nUFW will not be enabled with this script.\n\nYou must either manually add your SSH port with ${RED}ufw allow x/tcp${NC} where x = your SSH port.\n\nThen you can issue ${RED}sudo ufw enable${NC}\n\n"
+printf "\n${RED}Please read!${NC}\n\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: https://bit.ly/2NFGNWa or use ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\n"
+printf "UFW is not enabled with this script.\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\n"
 esac
