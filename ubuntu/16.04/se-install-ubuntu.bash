@@ -24,11 +24,11 @@ cd /tmp/softether-autoinstall
 printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
 add-apt-repository universe > /dev/null 2>&1
 apt update > /dev/null 2>&1
-apt install checkinstall build-essential -y > /dev/null 2>&1
+apt install checkinstall build-essential -y
 
-# Download SoftEther | Version 4.27 | Build 9668
-printf "\nDownloading latest release: ${RED}4.27${NC} | Build ${RED}9668${NC}\n\n"
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz > /dev/null 2>&1
+# Download SoftEther | Version 4.27 | Build 9669
+printf "\nDownloading release: ${RED}4.28${NC} | Build ${RED}9669${NC}\n\n"
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 tar -xzf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
 cd vpnserver
 echo $'1\n1\n1' | make > /dev/null 2>&1
