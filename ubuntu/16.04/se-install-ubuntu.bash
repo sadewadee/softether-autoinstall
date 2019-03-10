@@ -27,13 +27,13 @@ apt update > /dev/null 2>&1
 apt install checkinstall build-essential -y
 
 # Download SoftEther | Version 4.27 | Build 9669
-printf "\nDownloading release: ${RED}4.28${NC} | Build ${RED}9669${NC}\n\n"
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
-tar -xzf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
+printf "\nDownloading release: ${RED}4.29 RTM${NC} | Build ${RED}9680${NC}\n\n"
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
+tar -xzf softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 cd vpnserver
 echo $'1\n1\n1' | make > /dev/null 2>&1
-cd /tmp/softether-autoinstall && mv vpnserver/ /usr/local/
-chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
+cd /tmp/softether-autoinstall && mv vpnserver/ /opt
+chmod 600 /opt/vpnserver/* && chmod 700 /opt/vpnserver/vpncmd && chmod 700 /opt/vpnserver/vpnserver
 cd /tmp/softether-autoinstall && wget -O vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init > /dev/null 2>&1
 mv vpnserver-init /etc/init.d/vpnserver
 chmod 755 /etc/init.d/vpnserver
@@ -44,5 +44,5 @@ systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd && rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
 systemctl status vpnserver
-printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /usr/local/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
+printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
 esac
