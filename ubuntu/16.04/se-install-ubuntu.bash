@@ -39,21 +39,21 @@ apt update &&
 
 # Install build-essential and checkinstall
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' build-essential|grep "install ok installed")
-echo  "\nChecking for build-essential: $PKG_OK"
+echo  "Checking for build-essential: $PKG_OK"
 if [ "" == "$PKG_OK" ]; then
   echo "build-essential not installed. Installing now."
   sudo apt install -y build-essential
 fi
 
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' checkinstall|grep "install ok installed")
-echo "\nChecking for checkinstall: $PKG_OK"
+echo "Checking for checkinstall: $PKG_OK"
 if [ "" == "$PKG_OK" ]; then
   echo "checkinstall not installed. Installing now."
   sudo apt install -y checkinstall
 fi
 
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' build-essential|grep "install ok installed")
-echo  "\nChecking for build-essential: $PKG_OK"
+echo  "Checking for build-essential: $PKG_OK"
 if [ "" == "$PKG_OK" ]; then
   echo "build-essential is still not installed. Possible problem with apt? Exiting."
   exit 1
