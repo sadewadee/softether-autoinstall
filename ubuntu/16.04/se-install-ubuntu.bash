@@ -8,30 +8,63 @@ NC='\033[0m' # No Color
 clear
 
 # User confirmation
-read -rep $'!!! IMPORTANT !!!\n\nIf you are using this script to upgrade your version of SoftEther, please backup your config file via the GUI manager or copy it from /usr/local/vpnserver/\n\nThis will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] ' response
+read -rep $'!!! IMPORTANT !!!\n\nThis script will remove SoftEther if it has been previously installed. Please backup your config file via the GUI manager or copy it from /opt/vpnserver/ if you are upgrading.\n\nThis will download and compile SoftEther VPN on your server. Are you sure you want to continue? [y/N] ' response
 case $response in
 [yY][eE][sS]|[yY])
 
-# Remove previous SoftEther install if available
-rm -rf /usr/local/vpnserver /etc/inid.d/vpnserver /tmp/softether-autoinstall > /dev/null 2>&1
+# REMOVE PREVIOUS INSTALL
+# Check for SE install folder
+if [ -d "/opt/vpnserver" ]; then
+  rm -rf /opt/vpnserver > /dev/null 2>&1
+fi
+
+if [ -d "/tmp/softether-autoinstall" ]; then
+  rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
+fi
+
+# Check for init script
+if
+  [ -f "/etc/init.d/vpnserver" ]; then rm /etc/init.d/vpnserver;
+fi
+
+# Remove vpnserver from systemd
 update-rc.d vpnserver remove > /dev/null 2>&1
 
 # Create working directory
 mkdir -p /tmp/softether-autoinstall
 cd /tmp/softether-autoinstall
 
-# Install build-essentials & checkinstall
-printf "\n${RED}build-essential${NC} and ${RED}checkinstall${NC} are required. Installing those now.\n\n"
-add-apt-repository universe > /dev/null 2>&1
-apt update > /dev/null 2>&1
-apt install checkinstall build-essential -y
+# Perform apt update
+apt update &&
 
-# Download SoftEther | Version 4.27 | Build 9669
+# Install build-essential and checkinstall
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' build-essential|grep "install ok installed")
+echo  "\nChecking for build-essential: $PKG_OK"
+if [ "" == "$PKG_OK" ]; then
+  echo "build-essential not installed. Installing now."
+  sudo apt install -y build-essential
+fi
+
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' checkinstall|grep "install ok installed")
+echo "\nChecking for checkinstall: $PKG_OK"
+if [ "" == "$PKG_OK" ]; then
+  echo "checkinstall not installed. Installing now."
+  sudo apt install -y checkinstall
+fi
+
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' build-essential|grep "install ok installed")
+echo  "\nChecking for build-essential: $PKG_OK"
+if [ "" == "$PKG_OK" ]; then
+  echo "build-essential is still not installed. Possible problem with apt? Exiting."
+  exit 1
+fi
+
+# Download SoftEther | Version 4.29 | Build 9680
 printf "\nDownloading release: ${RED}4.29 RTM${NC} | Build ${RED}9680${NC}\n\n"
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 tar -xzf softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 cd vpnserver
-echo $'1\n1\n1' | make > /dev/null 2>&1
+echo $'1\n1\n1' | make &&
 cd /tmp/softether-autoinstall && mv vpnserver/ /opt
 chmod 600 /opt/vpnserver/* && chmod 700 /opt/vpnserver/vpncmd && chmod 700 /opt/vpnserver/vpnserver
 cd /tmp/softether-autoinstall && wget -O vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init > /dev/null 2>&1
@@ -43,6 +76,6 @@ printf "\nSoftEther VPN Server should now start as a system service from now on.
 systemctl start vpnserver
 printf "\nCleaning up...\n\n"
 cd && rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
-systemctl status vpnserver
-printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nIf the output above shows vpnserver.service to be active (running), then SoftEther VPN has been successfully installed and is now running.\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
+systemctl is-active --quiet vpnserver && echo "Service vpnserver is running."
+printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
 esac
