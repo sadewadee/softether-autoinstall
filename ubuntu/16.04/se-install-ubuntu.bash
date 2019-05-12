@@ -67,15 +67,50 @@ cd vpnserver
 echo $'1\n1\n1' | make &&
 cd /tmp/softether-autoinstall && mv vpnserver/ /opt
 chmod 600 /opt/vpnserver/* && chmod 700 /opt/vpnserver/vpncmd && chmod 700 /opt/vpnserver/vpnserver
-cd /tmp/softether-autoinstall && wget -O vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init > /dev/null 2>&1
-mv vpnserver-init /etc/init.d/vpnserver
-chmod 755 /etc/init.d/vpnserver
-printf "\nSystem daemon created. Registering changes...\n\n"
-update-rc.d vpnserver defaults > /dev/null 2>&1
-printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
-systemctl start vpnserver
-printf "\nCleaning up...\n\n"
-cd && rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
-systemctl is-active --quiet vpnserver && echo "Service vpnserver is running."
-printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
+cd /tmp/softether-autoinstall
+PS3='Are you going to use the bridge option on the VPN server? '
+options=("Yes" "No" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Yes")
+        apt install -y dnsmasq
+        wget -O dnsmasq.conf https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/dnsmasq.conf
+        rm /etc/dnsmasq.conf && mv dnsmasq.conf /etc/dnsmasq.conf
+        wget -O vpnserver-init-bridge https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init-bridge > /dev/null 2>&1
+        mv vpnserver-init-bridge /etc/init.d/vpnserver
+        chmod 755 /etc/init.d/vpnserver
+        printf "\nSystem daemon created. Registering changes...\n\n"
+        update-rc.d vpnserver defaults > /dev/null 2>&1
+        printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
+        systemctl start vpnserver
+        systemctl restart dnsmasq
+        printf "\nCleaning up...\n\n"
+        cd && rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
+        systemctl is-active --quiet vpnserver && echo "Service vpnserver is running."
+        printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
+        printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nYou still need to add the local bridge using the SoftEther VPN Server Manager. It is important that after you add the local bridge, you restart both dnsmasq and the vpnserver!\nSee the tutorial here: http://bit.ly/2HoxlQO\n\n"
+
+        break
+            ;;
+        "No")
+        wget -O vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init > /dev/null 2>&1
+        mv vpnserver-init /etc/init.d/vpnserver
+        chmod 755 /etc/init.d/vpnserver
+        printf "\nSystem daemon created. Registering changes...\n\n"
+        update-rc.d vpnserver defaults > /dev/null 2>&1
+        printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
+        systemctl start vpnserver
+        printf "\nCleaning up...\n\n"
+        cd && rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
+        systemctl is-active --quiet vpnserver && echo "Service vpnserver is running."
+        printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
+        break
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
 esac
