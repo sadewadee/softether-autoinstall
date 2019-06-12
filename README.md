@@ -7,7 +7,6 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 ### Install & Configure
 [- Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)     
 [- Open Ports for SoftEther VPN](https://github.com/icoexist/softether-autoinstall#open-ports-for-softether-vpn)
-
 [- Using Local Bridge on SoftEther VPN](https://github.com/icoexist/softether-autoinstall#Using-Local-Bridge-Setting-on-SoftEther-VPN)
 
 ### Uninstall
