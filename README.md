@@ -41,6 +41,8 @@ Now enable UFW with `ufw enable`.
 ## Using Local Bridge Setting on SoftEther VPN
 The Local Bridge Setting on SoftEther VPN allows you to run your own DHCP server on the VPN. This has much better performance than the built-in SecureNAT function. For instance, you can expect your Internet throughput speeds to increase by 100+ mbps (if your connection can handle it). It is important that you manually configure SoftEther VPN to use the new local bridge after setting this up. It will be outlined below.
 
+By default, the IP addresses handed out by dnsmasq will be 10.42.10.10 - 10.42.10.100. The default gateway is 10.42.10.1.
+
 ### Installation (Ubuntu)
 There's two methods of doing this. If you've already set up the SoftEther VPN Server, use the script below.
 ``` bash
