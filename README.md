@@ -63,6 +63,7 @@ If you are just now installing SoftEther VPN Server, then select option 1 when a
 - Select the “Bridge with New Tap Device”
 - Name the device soft and click “Create Local Bridge”
 - Verify that the new device was create by running ifconfig tap_soft in a SSH terminal session. You should see something like this:
+
 ![Output example](https://forum.icoexist.io/uploads/default/original/1X/b20b7e2c67d55a9b75238b53dc62797ee9d7fbb8.png)
 
 ### Enable NAT and enable postrouting
