@@ -7,6 +7,7 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 ### Install & Configure
 [- Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)     
 [- Open Ports for SoftEther VPN](https://github.com/icoexist/softether-autoinstall#open-ports-for-softether-vpn)
+[- Using Local Bridge setting on SoftEther VPN](https://github.com/icoexist/softether-autoinstall#Using-Local-Bridge-Setting-on-SoftEther-VPN)
 
 ### Uninstall
 [- Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
@@ -36,6 +37,54 @@ In terminal, execute the following: `ufw allow 443,1194,5555/tcp && ufw allow 50
 Please make sure you allow the port you use for SSH, otherwise you risk blocking inbound SSH connections. You can use `ufw allow ssh` or if you have set a custom port, use `ufw enable x/tcp` where `x = port`. For instance, if I use port `2222` for SSH, I'll use `ufw allow 2222/tcp`.    
 
 Now enable UFW with `ufw enable`.
+
+## Using Local Bridge Setting on SoftEther VPN
+The Local Bridge Setting on SoftEther VPN allows you to run your own DHCP server on the VPN. This has much better performance than the built-in SecureNAT function. For instance, you can expect your Internet throughput speeds to increase by 100+ mbps (if your connection can handle it). It is important that you manually configure SoftEther VPN to use the new local bridge after setting this up. It will be outlined below.
+
+### Installation (Ubuntu)
+There's two methods of doing this. If you've already set up the SoftEther VPN Server, use the script below.
+``` bash
+wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-install-ubuntu.bash && chmod +x se-install && ./se-install
+```
+
+If you are just now installing SoftEther VPN Server, then select option 1 when asked "Are you going to use the bridge option on the VPN server?".
+
+### SoftEther VPN Server Configuration
+**Disable SecureNAT** [example here](https://upload.icoexist.io/2019/04/2019-04-25_22-46-40.mp4)
+- Open the SoftEther VPN Server Management Utility
+- Connect to your VPN server
+- Select the VPN hub (or whatever hub you use on the VPN server) and click “Manage Virtual Hub”
+- Click “Virtual NAT And Virtual DHCP Server (SecureNAT)”
+- Click Disable, then exit to main configuration screen
+
+**Create Local Bridge** [example here](https://upload.icoexist.io/2019/04/2019-04-25_22-49-08.mp4)
+- Click “Local Bridge Setting”
+- Under “New Local Bridge Definition” select the VPN hub (or whatever hub you use on the VPN server)
+- Select the “Bridge with New Tap Device”
+- Name the device soft and click “Create Local Bridge”
+- Verify that the new device was create by running ifconfig tap_soft in a SSH terminal session. You should see something like this:
+![Output example](https://forum.icoexist.io/uploads/default/original/1X/b20b7e2c67d55a9b75238b53dc62797ee9d7fbb8.png)
+
+### Enable NAT and enable postrouting
+We need to create a file in /etc/sysctl.d/ to enable ipv4 forwarding. Use the following command to create this file:
+`nano /etc/sysctl.d/ipv4_forwarding.conf`
+and insert the following into the file:
+`net.ipv4.ip_forward = 1`
+
+Again, save and close the file by hitting Ctrl + X then [ENTER].
+
+Now we must enable this new option by issuing the following command:
+`sysctl --system`
+
+Now we need to add a POSTROUTING rule to iptables to correctly route traffic and enable NAT. Please replace [YOUR VPS IP ADDRESS] with the public IP address of your server.
+`iptables -t nat -A POSTROUTING -s 10.42.10.0/24 -j SNAT --to-source [YOUR VPS IP ADDRESS]`
+
+This rule will exist until the next system reboot, so to keep it persistent we will install iptables-persistent
+`apt install iptables-persistent`
+
+### Restart dnsmasq and SoftEther VPN Server
+If everything above was done correctly, all we need to do now is to restart the DHCP server and the running SoftEther VPN server.
+`/etc/init.d/dnsmasq restart && /etc/init.d/vpnserver restart`
 
 ## Uninstall SE-VPN Server [Ubuntu Only]
 As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
