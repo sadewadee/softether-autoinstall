@@ -89,6 +89,9 @@ This rule will exist until the next system reboot, so to keep it persistent we w
 If everything above was done correctly, all we need to do now is to restart the DHCP server and the running SoftEther VPN server.
 `/etc/init.d/dnsmasq restart && /etc/init.d/vpnserver restart`
 
+### Need help?
+Check out the forum post [here](https://forum.icoexist.io/t/how-to-use-softether-vpn-with-local-bridge-ubuntu/91) for a more in-depth explanation. If you can't seem to get your server to work at all, try running the install script again so you get a fresh start.
+
 ## Uninstall SE-VPN Server [Ubuntu Only]
 As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
 ```
