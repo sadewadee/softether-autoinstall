@@ -20,12 +20,12 @@ To get started, all you have to do is copy/paste the provided code for your OS. 
 [- Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
 ## Supported Operating Systems (64-bit only)
-#### Ubuntu 16.04 LTS | 18.04 LTS
+#### Ubuntu 16.04 LTS +
 ```bash
-wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/16.04/se-install-ubuntu.bash && chmod +x se-install && ./se-install
+wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-install-ubuntu.bash && chmod +x se-install && ./se-install
 ```
 
-#### CentOS 7
+#### CentOS 7 (Currently depreciated, no longer in development)
 ```bash
 curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
 ```
