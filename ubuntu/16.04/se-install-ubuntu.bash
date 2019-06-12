@@ -68,7 +68,7 @@ echo $'1\n1\n1' | make &&
 cd /tmp/softether-autoinstall && mv vpnserver/ /opt
 chmod 600 /opt/vpnserver/* && chmod 700 /opt/vpnserver/vpncmd && chmod 700 /opt/vpnserver/vpnserver
 cd /tmp/softether-autoinstall
-PS3='Are you going to use the bridge option on the VPN server? '
+PS3='Are you going to use the bridge option on the VPN server? If unsure or are using SecureNAT, select No.'
 options=("Yes" "No" "Quit")
 select opt in "${options[@]}"
 do
