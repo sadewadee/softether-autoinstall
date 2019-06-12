@@ -5,20 +5,20 @@ This is my SoftEther autoinstaller. This script will *hopefully* make your life 
 To get started, all you have to do is copy/paste the provided code for your OS. The script will handle everything else for you. Refer to the [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide) if you need to get set up quickly. Also refer to the [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list) should you need them.
 
 ### Install & Configure
-[- Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)     
-[- Open Ports for SoftEther VPN](https://github.com/icoexist/softether-autoinstall#open-ports-for-softether-vpn)
-[- Using Local Bridge on SoftEther VPN](https://github.com/icoexist/softether-autoinstall#Using-Local-Bridge-Setting-on-SoftEther-VPN)
+* [Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)     
+* [Open Ports for SoftEther VPN](https://github.com/icoexist/softether-autoinstall#open-ports-for-softether-vpn)
+* [Using Local Bridge on SoftEther VPN](https://github.com/icoexist/softether-autoinstall#Using-Local-Bridge-Setting-on-SoftEther-VPN)
 
 ### Uninstall
-[- Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
+* [Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
 
 ### Configure SoftEther VPN Server
-[- Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
-[- Other Options](https://github.com/icoexist/softether-autoinstall#other-options)   
-[- Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
+* [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
+* [Other Options](https://github.com/icoexist/softether-autoinstall#other-options)   
+* [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
 
 ### Copyright & Credit
-[- Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
+* [Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
 
 ## Supported Operating Systems (64-bit only)
 #### Ubuntu 16.04 LTS +
