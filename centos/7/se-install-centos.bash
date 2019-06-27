@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Define console colors
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-(( EUID != 0 )) && exec sudo -- "$0" "$@"
-clear
 
 # User confirmation
 read -r -p "This will install SoftEther to your server. Are you sure you want to continue? [y/N] " response
