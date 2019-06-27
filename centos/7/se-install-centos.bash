@@ -23,8 +23,8 @@ yum update -y && yum groupinstall "Development Tools" -y && yum install kernel-d
 
 # Download SoftEther | Version 4.27 | Build 9668
 printf "\nDownloading last stable release: ${RED}4.27${NC} | Build ${RED}9668${NC}\n\n"
-curl -o softether-vpn-4.27.tar.gz https://icoexist.io/mirror/softether/softether-vpnserver-v4.27-9668-beta-2018.05.29-linux-x64-64bit.tar.gz
-tar -xzf softether-vpn-4.27.tar.gz
+curl -o softether-vpnserver-v4.29.tar.gz http://www.softether-download.com/files/softether/v4.29-9680-rtm-2019.02.28-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
+tar -xzf softether-vpnserver-v4.29
 cd vpnserver
 echo $'1\n1\n1' | make
 cd ~/se-vpn
@@ -32,10 +32,18 @@ mv vpnserver/ /usr/local/
 chmod 600 /usr/local/vpnserver/* && chmod 700 /usr/local/vpnserver/vpncmd && chmod 700 /usr/local/vpnserver/vpnserver
 cd ~/se-vpn && curl -o vpnserver-init https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/vpnserver-init
 mv vpnserver-init /etc/init.d/vpnserver
-chmod 755 /etc/init.d/vpnserver
+chmod 755 /etc/init.d/vpnserver && /etc/init.d/vpnserver start
 printf "\nSystem daemon created. Registering changes...\n\n"
 chkconfig --add vpnserver
 printf "\nSoftEther VPN Server should now start as a system service from now on.\n\n"
+
+#install certbot
+yum install epel-release && certbot -y
+sudo ufw allow 80
+printf "\nChecking port.\n\n"
+certbot certonly --standalone --preferred-challenges http -d sg1.sadewa.my.id
+echo renew_hook = systemctl reload rabbitmq > /etc/letsencrypt/renewal/sadewa.my.id.conf
+certbot renew --dry-run
 
 # Open ports for SoftEther VPN Server using firewalld
 printf "\nNow opening ports for SSH and SoftEther.\n\nIf you use another port for SSH, please run ${RED}firewall-cmd --zone=public --permanent --add-port=x/tcp${NC} where x = your SSH port.\n\n"
